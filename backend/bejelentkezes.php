@@ -1,5 +1,7 @@
 <?php
+session_start();
 include "kapcsolat.php";
+
 $kod="sajt";
 
 $email=$_POST["login_email"];
@@ -7,8 +9,8 @@ $password=$_POST["login_password"];
 
 $kodolt_jelszo=md5($password.$kod);
 
-if (isset($kapcsolat)) {
-    if (!$kapcsolat)
+if (isset($conn)) {
+    if (!$conn)
     {
         echo"MySql felszolgáló hiba!";
         exit(-1);
@@ -17,16 +19,16 @@ if (isset($kapcsolat)) {
     {
         $sql="SELECT count(*) FROM felhasznalok WHERE felhasznalok_email=\"$email\" AND felhasznalok_jelszo=\"$kodolt_jelszo\"";
 
-        $ered=$kapcsolat->query($sql);
+        $ered=$conn->query($sql);
         $sor=mysqli_fetch_array($ered);
 
         if ($sor[0]==1)
         {
-            echo "Gratulálok bejelentkeztél!";
+            $_SESSION["email"]=$email;
         }
         else
         {
-            echo "Ez nem jött össze!";
+            session_destroy();
         }
     }
 }

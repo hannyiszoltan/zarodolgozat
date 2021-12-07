@@ -29,12 +29,12 @@
 
 
             <div class="modal-body">
-                <form method="post" action="http://zarodolgozat_backend.test/bejelentkezes.php">
+                <form method="post" action="http://zarodolgozat.test/backend/bejelentkezes.php">
 
                     <p>E-mail: <input type="text" name="login_email"></p>
                     <p>Jelszó: <input type="password" name="login_password"></p>
 
-                    <p><input type="submit" value="Bejelentkezés"></p>
+                    <p><input type="submit" class="btn btn-success" value="Bejelentkezés"></p>
                 </form>
             </div>
 
@@ -68,7 +68,7 @@
                 <!-- Modal body -->
                 <div class="modal-body">
 
-                    <form method="post" action="http://zarodolgozat_backend.test/regisztracio.php">
+                    <form method="post" action="http://zarodolgozat.test/backend/regisztracio.php">
 
                         <p>Felhasználónév: <input type="text" name="reg_username"></p>
                         <p>E-mail: <input type="text" name="reg_email"></p>
@@ -77,7 +77,7 @@
                         <p>Jelszó újra: <input type="password" name="reg_password2"></p>
 
                         <p><input type="checkbox" value="ok" name="stay_loged">maradjon bejelentkezve</p>
-                        <p><input type="submit" value="Regisztráció"></p>
+                        <p><input type="submit" class="btn btn-primary" value="Regisztráció"></p>
                     </form>
 
                 </div>
