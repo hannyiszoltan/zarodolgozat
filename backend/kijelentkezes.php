@@ -1,7 +1,8 @@
 <?php
+include "bejelentkezes_ell.php";
 session_start();
 
 session_destroy();
 
-echo "Sikeres kijelentkezés!"
+header("Location: ../index.php");
 ?>

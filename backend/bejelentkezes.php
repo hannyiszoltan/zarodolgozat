@@ -2,6 +2,7 @@
 session_start();
 include "kapcsolat.php";
 
+
 $kod="sajt";
 
 $email=$_POST["login_email"];
@@ -25,6 +26,7 @@ if (isset($conn)) {
         if ($sor[0]==1)
         {
             $_SESSION["email"]=$email;
+            header("Location: ../kezdolap.php");
         }
         else
         {
@@ -33,3 +35,6 @@ if (isset($conn)) {
     }
 }
 ?>
+
+
+
