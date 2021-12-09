@@ -1,0 +1,13 @@
+footer{
+    text-align: center;
+}
+.form-control{
+    width: 200px !important;
+
+}
+.navbar{
+    padding-bottom: 0px !important;
+}
+.d-flex{
+    padding-top: 16px !important;
+}
