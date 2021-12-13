@@ -10,7 +10,7 @@ var i=1;
 let sz="";
 for (var elem of adatok){
     sz+='<div class="card" style="width: 18rem; margin-left: 30px">';
-    sz+='<img src="" class="card-img-top" alt="film_kép">';
+    sz+='<img src="http://eeab-86-101-197-148.ngrok.io/backend/kepek/'+elem.film_kep+'" class="card-img-top" alt="film_kép">';
     sz+='<div class="card-body">';
     sz+='<h5 class="card-title">'+elem.film_cim+'</h5>';
     sz+='<p class="card-text">'+elem.film_leiras+'</p>';
