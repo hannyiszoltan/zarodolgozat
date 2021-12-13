@@ -61,6 +61,7 @@ include "./backend/bejelentkezes_ell.php";
     </div>
 </nav>
 
+<div>
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores illum ipsa neque nesciunt numquam optio reprehenderit ullam vitae. Aperiam doloribus ea ex facere ipsum odio odit praesentium similique unde veritatis.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur, corporis doloremque est eveniet fugit impedit magnam maxime minus molestias quasi, quibusdam quo reiciendis sint soluta velit veniam. Deserunt, quisquam.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quasi recusandae rem voluptatibus! Ab aut, delectus esse exercitationem fuga illo maxime nesciunt nobis quasi, qui quia quo sint, unde voluptates?
@@ -71,12 +72,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur, cor
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quasi recusandae rem voluptatibus! Ab aut, delectus esse exercitationem fuga illo maxime nesciunt nobis quasi, qui quia quo sint, unde voluptates?
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse officia possimus sit tenetur voluptas voluptates? Commodi consectetur, dignissimos doloremque ipsum maiores minima obcaecati officia, perspiciatis ratione repellat soluta velit?
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolores eligendi error nesciunt odit pariatur quam quas suscipit tempora vitae. Aliquam culpa nisi perspiciatis placeat porro possimus quasi sint soluta.
-
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores illum ipsa neque nesciunt numquam optio reprehenderit ullam vitae. Aperiam doloribus ea ex facere ipsum odio odit praesentium similique unde veritatis.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur, corporis doloremque est eveniet fugit impedit magnam maxime minus molestias quasi, quibusdam quo reiciendis sint soluta velit veniam. Deserunt, quisquam.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quasi recusandae rem voluptatibus! Ab aut, delectus esse exercitationem fuga illo maxime nesciunt nobis quasi, qui quia quo sint, unde voluptates?
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse officia possimus sit tenetur voluptas voluptates? Commodi consectetur, dignissimos doloremque ipsum maiores minima obcaecati officia, perspiciatis ratione repellat soluta velit?
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolores eligendi error nesciunt odit pariatur quam quas suscipit tempora vitae. Aliquam culpa nisi perspiciatis placeat porro possimus quasi sint soluta.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae culpa cum cumque debitis dicta, dolore dolorem, exercitationem impedit ipsam maiores necessitatibus nulla officiis optio placeat quibusdam quidem similique, sunt!
+</div>
 
 
 <div id="tablazat">
