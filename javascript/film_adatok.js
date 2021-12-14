@@ -10,7 +10,7 @@ var i=1;
 let sz="";
 for (var elem of adatok){
     sz+='<div class="card" style="width: 18rem; margin-left: 30px">';
-    sz+='<img src="http://eeab-86-101-197-148.ngrok.io/backend/kepek/'+elem.film_kep+'" class="card-img-top" alt="film_kép">';
+    sz+='<img src="http://zarodolgozat.test/backend/kepek/'+elem.film_kep+'" class="card-img-top" alt="film_kép">';
     sz+='<div class="card-body">';
     sz+='<h5 class="card-title">'+elem.film_cim+'</h5>';
     sz+='<p class="card-text">'+elem.film_leiras+'</p>';
@@ -32,4 +32,51 @@ for (var elem of adatok){
 }
     document.getElementById("tablazat").innerHTML=sz;
 
+}
+
+function toggleText() {
+
+    // Get all the elements from the page
+    var points =
+        document.getElementById("points");
+
+    var showMoreText =
+        document.getElementById("moreText");
+
+    var buttonText =
+        document.getElementById("textButton");
+
+    // If the display property of the dots
+    // to be displayed is already set to
+    // 'none' (that is hidden) then this
+    // section of code triggers
+    if (points.style.display === "none") {
+
+        // Hide the text between the span
+        // elements
+        showMoreText.style.display = "none";
+
+        // Show the dots after the text
+        points.style.display = "inline";
+
+        // Change the text on button to
+        // 'Show More'
+        buttonText.innerHTML = "Show More";
+    }
+
+        // If the hidden portion is revealed,
+    // we will change it back to be hidden
+    else {
+
+        // Show the text between the
+        // span elements
+        showMoreText.style.display = "inline";
+
+        // Hide the dots after the text
+        points.style.display = "none";
+
+        // Change the text on button
+        // to 'Show Less'
+        buttonText.innerHTML = "Show Less";
+    }
 }

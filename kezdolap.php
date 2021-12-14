@@ -61,29 +61,43 @@ include "./backend/bejelentkezes_ell.php";
     </div>
 </nav>
 
-<div>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores illum ipsa neque nesciunt numquam optio reprehenderit ullam vitae. Aperiam doloribus ea ex facere ipsum odio odit praesentium similique unde veritatis.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur, corporis doloremque est eveniet fugit impedit magnam maxime minus molestias quasi, quibusdam quo reiciendis sint soluta velit veniam. Deserunt, quisquam.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quasi recusandae rem voluptatibus! Ab aut, delectus esse exercitationem fuga illo maxime nesciunt nobis quasi, qui quia quo sint, unde voluptates?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse officia possimus sit tenetur voluptas voluptates? Commodi consectetur, dignissimos doloremque ipsum maiores minima obcaecati officia, perspiciatis ratione repellat soluta velit?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolores eligendi error nesciunt odit pariatur quam quas suscipit tempora vitae. Aliquam culpa nisi perspiciatis placeat porro possimus quasi sint soluta.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores illum ipsa neque nesciunt numquam optio reprehenderit ullam vitae. Aperiam doloribus ea ex facere ipsum odio odit praesentium similique unde veritatis.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur, corporis doloremque est eveniet fugit impedit magnam maxime minus molestias quasi, quibusdam quo reiciendis sint soluta velit veniam. Deserunt, quisquam.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quasi recusandae rem voluptatibus! Ab aut, delectus esse exercitationem fuga illo maxime nesciunt nobis quasi, qui quia quo sint, unde voluptates?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse officia possimus sit tenetur voluptas voluptates? Commodi consectetur, dignissimos doloremque ipsum maiores minima obcaecati officia, perspiciatis ratione repellat soluta velit?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolores eligendi error nesciunt odit pariatur quam quas suscipit tempora vitae. Aliquam culpa nisi perspiciatis placeat porro possimus quasi sint soluta.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores illum ipsa neque nesciunt numquam optio reprehenderit ullam vitae. Aperiam doloribus ea ex facere ipsum odio odit praesentium similique unde veritatis.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur, corporis doloremque est eveniet fugit impedit magnam maxime minus molestias quasi, quibusdam quo reiciendis sint soluta velit veniam. Deserunt, quisquam.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quasi recusandae rem voluptatibus! Ab aut, delectus esse exercitationem fuga illo maxime nesciunt nobis quasi, qui quia quo sint, unde voluptates?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque esse officia possimus sit tenetur voluptas voluptates? Commodi consectetur, dignissimos doloremque ipsum maiores minima obcaecati officia, perspiciatis ratione repellat soluta velit?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolores eligendi error nesciunt odit pariatur quam quas suscipit tempora vitae. Aliquam culpa nisi perspiciatis placeat porro possimus quasi sint soluta.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae culpa cum cumque debitis dicta, dolore dolorem, exercitationem impedit ipsam maiores necessitatibus nulla officiis optio placeat quibusdam quidem similique, sunt!
-</div>
 
-
-<div id="tablazat">
+<div style="overflow: hidden" id="tablazat">
 
 </div>
+
+
+
+
+<p>
+    GeeksforGeeks was born out of necessity-
+    a need to provide a convenient and
+    one-stop educational portal to all the
+    students of Computer Science.
+    <span id="points">...</span>
+
+    <!-- Define the text that would be
+        hidden by default and only shown
+        when clicked on the button -->
+    <span id="moreText"> This necessity was
+            as personal to me as it was universal.
+            This need combined with my passion for
+            teaching resulted in GeeksforGeeks as
+            we know today. My message to you, in
+            our inaugural edition of Geeks Digest,
+            would be that if you are looking for
+            a problem to work on, you don’t need
+            to look very far for it. All you should
+            do is to look around yourself.
+        </span>
+</p>
+
+
+<!-- Trigger toggleText() when the
+    button is clicked -->
+<button onclick="toggleText()" id="textButton">
+    Show More
+</button>
 
 
 

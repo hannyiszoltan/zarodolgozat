@@ -11,3 +11,6 @@ footer{
 .d-flex{
     padding-top: 16px !important;
 }
+.card{
+    float: left;
+}
