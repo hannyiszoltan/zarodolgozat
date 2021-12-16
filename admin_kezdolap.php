@@ -2,8 +2,7 @@
 session_start();
 error_reporting(0);
 include "./backend/bejelentkezes_ell.php";
-?>
-
+if($_SESSION["admin"]==1){ ?>
 <!doctype html>
 <html lang="hu">
 <head>
@@ -77,8 +76,8 @@ include "./backend/bejelentkezes_ell.php";
 
 
 
-<!--
-<footer>Designed by: H.Z.
+
+<footer>Üdv Admin!
     <p>
         GeeksforGeeks was born out of necessity-
         a need to provide a convenient and
@@ -86,9 +85,9 @@ include "./backend/bejelentkezes_ell.php";
         students of Computer Science.
         <span id="points">...</span>
 
-         Define the text that would be
+        <!-- Define the text that would be
             hidden by default and only shown
-            when clicked on the button
+            when clicked on the button -->
         <span id="moreText"> This necessity was
             as personal to me as it was universal.
             This need combined with my passion for
@@ -103,11 +102,15 @@ include "./backend/bejelentkezes_ell.php";
     </p>
 
 
-     Trigger toggleText() when the
-        button is clicked
+    <!-- Trigger toggleText() when the
+        button is clicked -->
     <button onclick="toggleText()" id="textButton">
         Show More
-    </button> -->
+    </button>
 </footer>
 </body>
 </html>
+<?php }
+else{
+
+}

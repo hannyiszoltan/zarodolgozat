@@ -8,6 +8,7 @@ $kod="sajt";
 $email=$_POST["login_email"];
 $password=$_POST["login_password"];
 
+
 $kodolt_jelszo=md5($password.$kod);
 
 if (isset($conn)) {
@@ -18,18 +19,34 @@ if (isset($conn)) {
     }
     else
     {
-        $sql="SELECT count(*) FROM felhasznalok WHERE felhasznalok_email=\"$email\" AND felhasznalok_jelszo=\"$kodolt_jelszo\"";
+        $sql="SELECT * FROM felhasznalok WHERE felhasznalok_email=\"$email\" AND felhasznalok_jelszo=\"$kodolt_jelszo\"";
+
 
         $ered=$conn->query($sql);
-        $sor=mysqli_fetch_array($ered);
+        $sorokszama=mysqli_num_rows($ered);
 
-        if ($sor[0]==1)
+        if ($sorokszama==1)
         {
-            $_SESSION["email"]=$email;
-            header("Location: ../kezdolap.php");
+            while($sor=mysqli_fetch_array($ered)){
+                $_SESSION["id"]=$sor['felhasznalok_id'];
+                $_SESSION["username"]=$sor['felhasznalok_nev'];
+                $_SESSION["email"]=$sor['felhasznalok_email'];
+                $_SESSION["admin"]=$sor['felhasznalok_admin'];
+
+                if ($_SESSION["admin"]==1){
+                    header("Location: ../admin_kezdolap.php");
+                }
+                else{
+                    header("Location: ../kezdolap.php");
+                }
+
+            }
+
+
         }
         else
         {
+            echo "szarvagy!";
             session_destroy();
         }
     }
