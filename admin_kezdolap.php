@@ -112,5 +112,12 @@ if($_SESSION["admin"]==1){ ?>
 </html>
 <?php }
 else{
+    if(isset($_SESSION['email']))
+    {
+        header('Location: http://zarodolgozat.test/kezdolap.php');
+        exit;
+    }else{
+        header('Location: http://zarodolgozat.test/index.php');
+    }
 
 }
