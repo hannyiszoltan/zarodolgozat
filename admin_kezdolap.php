@@ -28,7 +28,7 @@ if($_SESSION["admin"]==1){ ?>
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Kezdőlap</a>
+        <a class="navbar-brand" href="admin_kezdolap.php">Kezdőlap</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -52,6 +52,9 @@ if($_SESSION["admin"]==1){ ?>
                         <li><a class="dropdown-item" href="#">Fantasy</a></li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin_eszkozok.php">Admin Eszközök</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bejelentkezve: <?php echo $_SESSION["email"]; ?></a>
@@ -67,6 +70,30 @@ if($_SESSION["admin"]==1){ ?>
 
 </div>
 
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Film
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bezárás</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 
