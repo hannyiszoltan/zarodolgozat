@@ -82,7 +82,7 @@ if($_SESSION["admin"]==1){ ?>
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body">
+            <div id="modal-torzs" class="modal-body">
                 Film
             </div>
 
