@@ -66,7 +66,7 @@ if($_SESSION["admin"]==1){ ?>
 </nav>
 
 
-<div class="row" id="tablazat">
+<div style="--bs-gutter-x: auto;" class="row" id="tablazat">
 
 </div>
 
@@ -77,13 +77,13 @@ if($_SESSION["admin"]==1){ ?>
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
+                <h4 id="modal-fejlec" class="modal-title"></h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div id="modal-torzs" class="modal-body">
-                Film
+
             </div>
 
             <!-- Modal footer -->

@@ -31,7 +31,20 @@ footer{
     padding: 10px 10px 10px 10px;
     border-radius: 25px;
 }
+.modal-image{
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
+    width: 40%;
+}
 
+#modal-torzs{
+    display: flex;
+}
+
+.modal-leiras{
+    flex: 1 1 auto;
+    padding: 10px 10px 10px 10px;
+}
 
 .ertekeles_nyil_fel{
     color: green;
