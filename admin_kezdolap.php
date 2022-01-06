@@ -66,7 +66,7 @@ if($_SESSION["admin"]==1){ ?>
 </nav>
 
 
-<div style="--bs-gutter-x: auto;" class="row" id="tablazat">
+<div style="margin-right: unset;margin-left: unset" class="row" id="tablazat">
 
 </div>
 

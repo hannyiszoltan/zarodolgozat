@@ -2,26 +2,33 @@
 include "kapcsolat.php";
 header("Content-type: Application/json; charset=utf8");
 
-$sql = "SELECT * FROM film_adatok";
+$film_data = "SELECT * FROM film_adatok";
+
 if (isset($conn)) {
-    $result = mysqli_query($conn, $sql);
+    $data_result = mysqli_query($conn, $film_data);
 }
 
-$kimenet=array();
 
-if (isset($result)) {
-    if (mysqli_num_rows($result) > 0) {
+$film_data_array=array();
 
-        while($row = mysqli_fetch_assoc($result)) {
+if (isset($data_result)) {
+    if (mysqli_num_rows($data_result) > 0) {
+
+        while($row = mysqli_fetch_assoc($data_result)) {
             //echo "id: " . $row["film_cim"]. " - Name: " . $row["film_hossz"]. " " . $row["film_id"]. "<br>";
-            array_push($kimenet,$row);
+            array_push($film_data_array,$row);
         }
 
-        echo json_encode($kimenet,JSON_UNESCAPED_UNICODE);
+        echo json_encode($film_data_array,JSON_UNESCAPED_UNICODE);
 
     } else {
         echo 0;
     }
 }
 
+
+
+
 mysqli_close($conn);
+
+?>
