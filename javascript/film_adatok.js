@@ -27,34 +27,73 @@ for (var elem of adatok) {
     sz += '</div>';
     sz += '</div>';
 
-
     document.getElementById("tablazat").innerHTML = sz;
 }}
 
-getComments=(id)=>{
 
+
+
+
+modal=(id,cim,kep,leiras,)=> {
+    document.getElementById("modal-fejlec").innerText = cim;
+    let modal_content = '<img class="modal-image" src="http://zarodolgozat.test/backend/kepek/' + kep + '" alt="film_kép">';
+    modal_content += '<p class="modal-leiras">' + leiras + '</p>';
+    modal_content += '<div id="comments">  </div>';
+    document.getElementById("modal-torzs").innerHTML = modal_content;
 }
-
-modal=(id,cim,kep,leiras)=>{
-    document.getElementById("modal-fejlec").innerText=cim;
-    let modal_content='<img class="modal-image" src="http://zarodolgozat.test/backend/kepek/' + kep + '" alt="film_kép">';
-    modal_content+='<p class="modal-leiras">'+leiras+'</p>';
-    modal_content+='<div id="comments">  </div>'
-    document.getElementById("modal-torzs").innerHTML=modal_content;
-
-    let kommentek = fetch('http://zarodolgozat.test/backend/get_comments.php?id='+id+'',
+    /*let kommentek = fetch('http://zarodolgozat.test/backend/get_comments.php?id='+id+'',
         {
             method: 'GET',
             headers: {
-                'Content-Type': 'Application/json'
+                'Content-Type': 'application/json'
             }
         })
         .then(response => response.json());
-    console.log(kommentek);
-    let sz="";
-    for (var elem2 of kommentek){
-        sz += kommentek.ertekeles_szoveg;
-        document.getElementById("comments").innerHTML = sz;
-    }
+    //console.log(kommentek);
+
+
+
+
+function show_comments(id){
+    const response = fetch('http://zarodolgozat.test/backend/get_comments.php?id='+id+'',
+        {
+            method:'GET',
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(x => x.json())
+        .then(x => console.log(x));
 }
 
+
+async function postData(url = 'http://zarodolgozat.test/backend/get_comments.php?id='+id+'', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    });
+    return response.json();
+}
+
+postData('http://zarodolgozat.test/backend/get_comments.php')
+    .then(data => {
+        console.log(data);
+    });
+
+
+
+function show_comments(id){
+
+    let sz="";
+    for (var elem2 of id){
+        sz += id.ertekeles_szoveg;
+        document.getElementById("comments").innerHTML = sz;
+    }}*/

@@ -52,8 +52,17 @@ if($_SESSION["admin"]==1){ ?>
                         <li><a class="dropdown-item" href="#">Fantasy</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="admin_eszkozok.php">Admin Eszközök</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Admin Eszközök
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="felhasznalok_kezelese.php">Felhasználók kezelése</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Film felvitele</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">asd</a></li>
+                    </ul>
                 </li>
             </ul>
             <form class="d-flex">

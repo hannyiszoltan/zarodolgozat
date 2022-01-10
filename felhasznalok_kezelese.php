@@ -18,6 +18,10 @@ if($_SESSION["admin"]==1){ ?>
         <!-- Latest compiled JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <script src="../javascript/felh_angular.js"></script>
+
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
         <script src="./javascript/film_adatok.js"></script>
@@ -45,15 +49,24 @@ if($_SESSION["admin"]==1){ ?>
                             Toplisták
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Kaland</a></li>
+                            <li><a class="dropdown-item" href="">Kaland</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Akció</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Fantasy</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Admin Eszközök</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin Eszközök
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Felhasználók kezelése</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Film felvitele</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">asd</a></li>
+                        </ul>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -67,7 +80,50 @@ if($_SESSION["admin"]==1){ ?>
 
 
 
+    <h1>Felhasználók</h1>
 
+
+    <div ng-app="myApp" ng-controller="customersCtrl">
+
+
+
+        <table class="table table-bordered table-striped" style="width:50%">
+            <tr>
+                <th>
+                    <button class="btn btn-primary" ng-click="sortBy('felhasznalok_nev')">Felhasználó név</button>
+                    <span class="sortorder" ng-show="propertyName === 'felhasznalok_nev'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
+                    <button class="btn btn-primary" ng-click="sortBy('felhasznalok_admin')">Rang</button>
+                    <span class="sortorder" ng-show="propertyName === 'felhasznalok_admin'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
+                    Törlés
+                </th>
+                <th>
+                    Rang Módosítás
+                </th>
+
+            </tr>
+            <tr ng-repeat="x in felhasznalok | orderBy:propertyName:reverse">
+                <td>{{ x.felhasznalok_nev }}</td>
+                <td>{{ x.felhasznalok_admin }}</td>
+                <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.felhasznalok_id);' value='Törlés'></td>
+
+
+
+
+                <td>
+                    <script ></script>
+                    <input type='button' class="btn btn-outline-success" ng-click='rangup($index,x.felhasznalok_id,x.felhasznalok_admin);' value='Rang növel'>
+                    <input type='button' class="btn btn-outline-danger" ng-click='rangdown($index,x.felhasznalok_id,x.felhasznalok_admin);' value='Rang csökkent'>
+
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
 
 
     <footer>
