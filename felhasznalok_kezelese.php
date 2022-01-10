@@ -63,7 +63,7 @@ if($_SESSION["admin"]==1){ ?>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Felhasználók kezelése</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Film felvitele</a></li>
+                            <li><a class="dropdown-item" href="film_kezeles.php">Film felvitele</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">asd</a></li>
                         </ul>
@@ -110,15 +110,9 @@ if($_SESSION["admin"]==1){ ?>
                 <td>{{ x.felhasznalok_admin }}</td>
                 <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.felhasznalok_id);' value='Törlés'></td>
 
-
-
-
                 <td>
-                    <script ></script>
-                    <input type='button' class="btn btn-outline-success" ng-click='rangup($index,x.felhasznalok_id,x.felhasznalok_admin);' value='Rang növel'>
-                    <input type='button' class="btn btn-outline-danger" ng-click='rangdown($index,x.felhasznalok_id,x.felhasznalok_admin);' value='Rang csökkent'>
-
-
+                    <input onclick="window.location.reload()" ng-if="x.felhasznalok_admin==0" type='button' class="btn btn-outline-success" ng-click='rangup($index,x.felhasznalok_id,x.felhasznalok_admin);' value='Rang növel'>
+                    <input onclick="window.location.reload()" ng-if="x.felhasznalok_admin==1" type='button' class="btn btn-outline-danger" ng-click='rangdown($index,x.felhasznalok_id,x.felhasznalok_admin);' value='Rang csökkent'>
                 </td>
             </tr>
         </table>

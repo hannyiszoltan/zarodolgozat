@@ -13,9 +13,9 @@ app.controller('customersCtrl', function($scope, $http) {
     };
 
 
+
 // Remove record
     $scope.remove = function(index,userid){
-
         $http({
             method: 'post',
             url: 'http://zarodolgozat.test/backend/delete_user.php',
@@ -30,7 +30,6 @@ app.controller('customersCtrl', function($scope, $http) {
 
     
     $scope.rangup = function(index,userid){
-
         $http({
             method: 'post',
             url: 'http://zarodolgozat.test/backend/change_admin_up.php',
