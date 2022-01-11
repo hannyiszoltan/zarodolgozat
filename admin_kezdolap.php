@@ -59,7 +59,7 @@ if($_SESSION["admin"]==1){ ?>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="felhasznalok_kezelese.php">Felhasználók kezelése</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Film felvitele</a></li>
+                        <li><a class="dropdown-item" href="film_kezeles.php">Film felvitele</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">asd</a></li>
                     </ul>
@@ -113,7 +113,7 @@ if($_SESSION["admin"]==1){ ?>
 
 
 
-<footer>Üdv Admin!
+<footer id="footer">Üdv Admin!
     <p>
         GeeksforGeeks was born out of necessity-
         a need to provide a convenient and

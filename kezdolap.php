@@ -77,8 +77,10 @@ include "./backend/bejelentkezes_ell.php";
 
 
 
-<!--
-<footer>Designed by: H.Z.
+
+<footer id="footer">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam ea est eveniet, hic ipsam, ipsum itaque maiores minima nostrum qui quo, reprehenderit veniam voluptas voluptate voluptatibus voluptatum. Dolorem, qui?
+    <!--Designed by: H.Z.
     <p>
         GeeksforGeeks was born out of necessity-
         a need to provide a convenient and

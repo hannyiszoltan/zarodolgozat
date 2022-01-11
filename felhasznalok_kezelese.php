@@ -120,7 +120,7 @@ if($_SESSION["admin"]==1){ ?>
     </div>
 
 
-    <footer>
+    <footer id="footer">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores distinctio dolore eligendi fugiat id illo illum, inventore laborum maiores, minus, mollitia nemo provident qui quidem repudiandae voluptatem! Ab.</p>
     </footer>
 

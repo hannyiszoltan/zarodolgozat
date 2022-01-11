@@ -91,6 +91,9 @@
         </div>
     </div>
 
+<footer id="footer">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis eligendi eum exercitationem fugit ipsum natus neque obcaecati perferendis quas, quo repudiandae sequi. Delectus deleniti dolor, minima nemo nihil quae.
+</footer>
 
 
 </body>

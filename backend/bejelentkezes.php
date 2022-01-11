@@ -46,8 +46,9 @@ if (isset($conn)) {
         }
         else
         {
-            echo "szarvagy!";
             session_destroy();
+            header("Location: ../kezdolap.php");
+            alert("Nem sikerült bejelentkezni, próbáld újra!");
         }
     }
 }

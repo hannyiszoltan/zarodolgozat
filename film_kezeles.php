@@ -12,6 +12,7 @@ if($_SESSION["admin"]==1){ ?>
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link rel="stylesheet" href="./CSS/kezdolap.css">
+        <link rel="stylesheet" href="./CSS/film_kezeles.css">
         <!-- Latest compiled and minified CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,7 +62,7 @@ if($_SESSION["admin"]==1){ ?>
                             Admin Eszközök
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Felhasználók kezelése</a></li>
+                            <li><a class="dropdown-item" href="felhasznalok_kezelese.php">Felhasználók kezelése</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Film felvitele</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -78,6 +79,28 @@ if($_SESSION["admin"]==1){ ?>
         </div>
     </nav>
 
+    <form style="padding: 15px !important;" class="input-group" action="./backend/post_film" method="post">
+        <div style="width: 500px !important;" class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Film címe:</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Film cím felvitel" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div style="width: 500px !important;" class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Film hossza:</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Film hossz felvitel" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="form-group">
+            <label class="input-group-text" for="exampleFormControlTextarea1">Film leírás</label>
+            <textarea style="width: 500px !important;" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+
+    </form>
+    </div>
 
 
 
@@ -86,7 +109,7 @@ if($_SESSION["admin"]==1){ ?>
 
 
 
-    <footer>
+    <footer id="footer">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores distinctio dolore eligendi fugiat id illo illum, inventore laborum maiores, minus, mollitia nemo provident qui quidem repudiandae voluptatem! Ab.</p>
     </footer>
 

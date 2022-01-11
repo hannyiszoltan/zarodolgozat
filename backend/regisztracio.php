@@ -43,7 +43,7 @@ else{
             $sql="INSERT INTO felhasznalok (felhasznalok_nev, felhasznalok_jelszo, felhasznalok_email, felhasznalok_admin) VALUES ('$username','$password1','$email','0')";
 
             mysqli_query($conn, $sql);
-            echo "Sikeres regisztráció";
+            header("Location: ../kezdolap.php");
 
         }
     }
