@@ -87,7 +87,7 @@ if($_SESSION["admin"]==1){ ?>
     <table>
         <tr>
             <td style="vertical-align: top">
-    <form style="padding: 15px !important; "  action="http://zarodolgozat.test/backend/post_film.php" method="post">
+    <form enctype="multipart/form-data" style="padding: 15px !important; "  action="http://zarodolgozat.test/backend/post_film.php" method="post">
 
 
 

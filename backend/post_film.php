@@ -29,9 +29,14 @@ else{
             $data = mysqli_fetch_assoc($result);
             $next_increment = $data['Auto_increment'];
             $image_name=$next_increment.".".pathinfo($_FILES['image']['name'] , PATHINFO_EXTENSION);
-            echo $image_name;
+
+            $target = 'kepek/'.$image_name;
+            move_uploaded_file( $_FILES['image']['tmp_name'], $target);
+
 
             $sql="INSERT INTO film_data (film_title, film_length, film_review, film_description, film_image) VALUES ('$film_title','$film_length','$film_review','$film_description','$image_name')";
+
+
 
             mysqli_query($conn, $sql);
             header("Location: ../film_management.php");
