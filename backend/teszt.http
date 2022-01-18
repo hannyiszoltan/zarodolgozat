@@ -1,4 +1,0 @@
-POST http://zarodolgozat.test/backend/get_comments.php?id=1
-Accept: application/json
-
-#

@@ -1,5 +1,8 @@
 footer{
     text-align: center;
+
+    height: 100px;
+    background-color:dimgrey;
 }
 .form-control{
     width: 200px !important;
@@ -13,12 +16,10 @@ footer{
 .d-flex{
     padding-top: 16px !important;
 }
-
 #tablazat{
     justify-content: space-evenly;
     background-color: #22c1c3; !important;
 }
-
 .card{
     margin: 10px 10px 10px 10px !important;
 
@@ -26,7 +27,6 @@ footer{
     background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     border: 1px solid black !important;
 }
-
 .card-img-top{
     padding: 10px 10px 10px 10px;
     border-radius: 25px;
@@ -36,11 +36,9 @@ footer{
     border-radius: 25px;
     width: 40%;
 }
-
 #modal-torzs{
     display: flex;
 }
-
 .modal-leiras{
     flex: 1 1 auto;
     padding: 10px 10px 10px 10px;
@@ -72,10 +70,11 @@ body{
     background-color: #22c1c3 !important;
 
 }
-
-
-#footer {
-    background: rgb(34,193,195);
-    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+.rating{
+    letter-spacing: -0.9rem !important;
+    margin-right:3px !important;
+    font-size: 25px !important
 }
+
+
 

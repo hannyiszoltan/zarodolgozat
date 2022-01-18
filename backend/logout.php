@@ -1,5 +1,5 @@
 <?php
-include "bejelentkezes_ell.php";
+include "check_login.php";
 session_start();
 
 session_destroy();

@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include "./backend/bejelentkezes_ell.php";
+include "./backend/check_login.php";
 ?>
 
 <!doctype html>
@@ -12,7 +12,7 @@ include "./backend/bejelentkezes_ell.php";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="./CSS/kezdolap.css">
+    <link rel="stylesheet" href="CSS/main_page.css">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@ include "./backend/bejelentkezes_ell.php";
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <script src="./javascript/film_adatok.js"></script>
+    <script src="javascript/main_page_films.js"></script>
 
     <title>Kezdőlap</title>
 </head>
@@ -57,7 +57,7 @@ include "./backend/bejelentkezes_ell.php";
             <form class="d-flex">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bejelentkezve: <?php echo $_SESSION["email"]; ?></a>
 
-                <p><a class="btn btn-outline-danger" href='./backend/kijelentkezes.php'>Kijelentkezés</a></p>
+                <p><a class="btn btn-outline-danger" href='backend/logout.php'>Kijelentkezés</a></p>
             </form>
         </div>
     </div>
@@ -80,36 +80,7 @@ include "./backend/bejelentkezes_ell.php";
 
 <footer id="footer">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam ea est eveniet, hic ipsam, ipsum itaque maiores minima nostrum qui quo, reprehenderit veniam voluptas voluptate voluptatibus voluptatum. Dolorem, qui?
-    <!--Designed by: H.Z.
-    <p>
-        GeeksforGeeks was born out of necessity-
-        a need to provide a convenient and
-        one-stop educational portal to all the
-        students of Computer Science.
-        <span id="points">...</span>
 
-         Define the text that would be
-            hidden by default and only shown
-            when clicked on the button
-        <span id="moreText"> This necessity was
-            as personal to me as it was universal.
-            This need combined with my passion for
-            teaching resulted in GeeksforGeeks as
-            we know today. My message to you, in
-            our inaugural edition of Geeks Digest,
-            would be that if you are looking for
-            a problem to work on, you don’t need
-            to look very far for it. All you should
-            do is to look around yourself.
-        </span>
-    </p>
-
-
-     Trigger toggleText() when the
-        button is clicked
-    <button onclick="toggleText()" id="textButton">
-        Show More
-    </button> -->
 </footer>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-include "kapcsolat.php";
+include "db_connection.php";
 header("Content-type: Application/json; charset=utf8");
 
 $id = $_GET['id'];

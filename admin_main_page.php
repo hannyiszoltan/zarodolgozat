@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include "./backend/bejelentkezes_ell.php";
+include "./backend/check_login.php";
 if($_SESSION["admin"]==1){ ?>
 <!doctype html>
 <html lang="hu">
@@ -11,7 +11,7 @@ if($_SESSION["admin"]==1){ ?>
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="./CSS/kezdolap.css">
+    <link rel="stylesheet" href="CSS/main_page.css">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@ if($_SESSION["admin"]==1){ ?>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <script src="./javascript/film_adatok.js"></script>
+    <script src="javascript/main_page_films.js"></script>
 
     <title>Kezdőlap</title>
 </head>
@@ -28,7 +28,7 @@ if($_SESSION["admin"]==1){ ?>
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="admin_kezdolap.php">Kezdőlap</a>
+        <a class="navbar-brand" href="admin_main_page.php">Kezdőlap</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,9 +57,9 @@ if($_SESSION["admin"]==1){ ?>
                         Admin Eszközök
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="felhasznalok_kezelese.php">Felhasználók kezelése</a></li>
+                        <li><a class="dropdown-item" href="user_management.php">Felhasználók kezelése</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="film_kezeles.php">Film felvitele</a></li>
+                        <li><a class="dropdown-item" href="film_management.php">Film felvitele</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">asd</a></li>
                     </ul>
@@ -68,7 +68,7 @@ if($_SESSION["admin"]==1){ ?>
             <form class="d-flex">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bejelentkezve: <?php echo $_SESSION["email"]; ?></a>
 
-                <p><a class="btn btn-outline-danger" href='./backend/kijelentkezes.php'>Kijelentkezés</a></p>
+                <p><a class="btn btn-outline-danger" href='backend/logout.php'>Kijelentkezés</a></p>
             </form>
         </div>
     </div>
@@ -113,44 +113,22 @@ if($_SESSION["admin"]==1){ ?>
 
 
 
-<footer id="footer">Üdv Admin!
-    <p>
-        GeeksforGeeks was born out of necessity-
-        a need to provide a convenient and
-        one-stop educational portal to all the
-        students of Computer Science.
-        <span id="points">...</span>
-
-        <!-- Define the text that would be
-            hidden by default and only shown
-            when clicked on the button -->
-        <span id="moreText"> This necessity was
-            as personal to me as it was universal.
-            This need combined with my passion for
-            teaching resulted in GeeksforGeeks as
-            we know today. My message to you, in
-            our inaugural edition of Geeks Digest,
-            would be that if you are looking for
-            a problem to work on, you don’t need
-            to look very far for it. All you should
-            do is to look around yourself.
-        </span>
-    </p>
-
-
-    <!-- Trigger toggleText() when the
-        button is clicked -->
-    <button onclick="toggleText()" id="textButton">
-        Show More
-    </button>
+<footer id="footer">
+    Üdv Admin!
+    <br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae consectetur debitis distinctio ducimus in ipsam magni necessitatibus omnis porro rem similique, sit soluta, sunt, totam ullam veniam. Necessitatibus, unde?
 </footer>
+
 </body>
+
+
 </html>
+
 <?php }
 else{
     if(isset($_SESSION['email']))
     {
-        header('Location: http://zarodolgozat.test/kezdolap.php');
+        header('Location: http://zarodolgozat.test/main_page.php');
         exit;
     }else{
         header('Location: http://zarodolgozat.test/index.php');

@@ -1,5 +1,5 @@
 window.onload = function() {
-fetch('http://zarodolgozat.test/backend/json_lekerdezes.php')
+fetch('http://zarodolgozat.test/backend/get_film_data.php')
 .then(x => x.json())
 .then(y => megjelenit(y))
 }
@@ -11,16 +11,16 @@ let sz="";
 for (var elem of adatok) {
     //sz += '<a style="all: unset" data-bs-toggle="modal" data-bs-target="#myModal">';
     sz += '<div class="card" onclick="" style="width: 300px;">';
-    sz += '<img src="http://zarodolgozat.test/backend/kepek/' + elem.film_kep + '" class="card-img-top" alt="film_kép">';
+    sz += '<img src="http://zarodolgozat.test/backend/kepek/' + elem.film_image + '" class="card-img-top" alt="film_kép">';
     sz += '<div class="card-body">';
-    sz += '<h5 class="card-title">' + elem.film_cim + '</h5>';
-    sz += '<p class="card-text">' + elem.film_leiras + '</p>';
+    sz += '<h5 class="card-title">' + elem.film_title + '</h5>';
+    sz += '<p class="card-text">' + elem.film_description + '</p>';
     sz += '</div>';
     sz += '<div class="card-body">';
     //sz += '</a>';
-    sz += '<button id="film_bovebben' + elem.film_id + '" type="button" onclick="modal(\''+elem.film_id+'\',\''+elem.film_cim+'\',\''+elem.film_kep+'\',\''+elem.film_leiras+'\')" data-bs-toggle="modal" data-bs-target="#myModal" name="'+elem.film_id+'" class="card-link btn btn-outline-success">' + "Bővebben" + '</button>';
+    sz += '<button id="film_bovebben' + elem.film_id + '" type="button" onclick="modal(\''+elem.film_id+'\',\''+elem.film_title+'\',\''+elem.film_image+'\',\''+elem.film_description+'\')" data-bs-toggle="modal" data-bs-target="#myModal" name="'+elem.film_id+'" class="card-link btn btn-outline-success">' + "Bővebben" + '</button>';
     sz += '<ul class="list-group list-group-flush">';
-    sz += '<li class="list-group-item">Értékelés: ' + elem.film_ertekeles + ' <a href=""><i class="fas fa-thumbs-up ertekeles_nyil_fel"></i> </a> <a href=""><i class="fas fa-thumbs-down ertekeles_nyil_le"></i></a> </li>';
+    sz += '<li class="list-group-item">Értékelés: ' + elem.film_review + ' <div style="display: flex">     <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n </div> </li>';
     sz += '<li class="list-group-item">' + "A second item" + '</li>';
     sz += '<li class="list-group-item">' + "A third item" + '</li>';
     sz += '</ul>';
@@ -33,13 +33,18 @@ for (var elem of adatok) {
 
 
 
-
-modal=(id,cim,kep,leiras,)=> {
-    document.getElementById("modal-fejlec").innerText = cim;
-    let modal_content = '<img class="modal-image" src="http://zarodolgozat.test/backend/kepek/' + kep + '" alt="film_kép">';
-    modal_content += '<p class="modal-leiras">' + leiras + '</p>';
+modal=(id,title,image,description,)=> {
+    document.getElementById("modal-fejlec").innerText = title;
+    let modal_content = '<img class="modal-image" src="http://zarodolgozat.test/backend/kepek/' + image + '" alt="film_kép">';
+    modal_content += '<p class="modal-leiras">' + description + '</p>';
     modal_content += '<div id="comments">  </div>';
     document.getElementById("modal-torzs").innerHTML = modal_content;
+}
+
+
+
+function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
 }
     /*let kommentek = fetch('http://zarodolgozat.test/backend/get_comments.php?id='+id+'',
         {

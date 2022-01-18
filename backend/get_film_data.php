@@ -1,8 +1,8 @@
 <?php
-include "kapcsolat.php";
+include "db_connection.php";
 header("Content-type: Application/json; charset=utf8");
 
-$film_data = "SELECT * FROM film_adatok";
+$film_data = "SELECT * FROM film_data";
 
 if (isset($conn)) {
     $data_result = mysqli_query($conn, $film_data);

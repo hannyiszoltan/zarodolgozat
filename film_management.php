@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include "./backend/bejelentkezes_ell.php";
+include "./backend/check_login.php";
 if($_SESSION["admin"]==1){ ?>
     <!doctype html>
     <html lang="hu">
@@ -11,8 +11,11 @@ if($_SESSION["admin"]==1){ ?>
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="./CSS/kezdolap.css">
-        <link rel="stylesheet" href="./CSS/film_kezeles.css">
+        <link rel="stylesheet" href="CSS/main_page.css">
+        <link rel="stylesheet" href="CSS/film_management.css">
+        <script src="javascript/main_page_films.js"></script>
+        <script src="javascript/film_management.js"></script>
+
         <!-- Latest compiled and minified CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,19 +24,21 @@ if($_SESSION["admin"]==1){ ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-        <script src="../javascript/felh_angular.js"></script>
+
+        <!--<script src="../javascript/felh_angular.js"></script>-->
 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-        <script src="./javascript/film_adatok.js"></script>
+
+
 
         <title>Kezdőlap</title>
     </head>
-    <body>
+    <body onload="init()">
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="admin_kezdolap.php">Kezdőlap</a>
+            <a class="navbar-brand" href="admin_main_page.php">Kezdőlap</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -62,7 +67,7 @@ if($_SESSION["admin"]==1){ ?>
                             Admin Eszközök
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="felhasznalok_kezelese.php">Felhasználók kezelése</a></li>
+                            <li><a class="dropdown-item" href="user_management.php">Felhasználók kezelése</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Film felvitele</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -73,43 +78,78 @@ if($_SESSION["admin"]==1){ ?>
                 <form class="d-flex">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bejelentkezve: <?php echo $_SESSION["email"]; ?></a>
 
-                    <p><a class="btn btn-outline-danger" href='./backend/kijelentkezes.php'>Kijelentkezés</a></p>
+                    <p><a class="btn btn-outline-danger" href='backend/logout.php'>Kijelentkezés</a></p>
                 </form>
             </div>
         </div>
     </nav>
 
-    <form style="padding: 15px !important;" class="input-group" action="./backend/post_film" method="post">
+    <table>
+        <tr>
+            <td style="vertical-align: top">
+    <form style="padding: 15px !important; "  action="http://zarodolgozat.test/backend/post_film.php" method="post">
+
+
+
         <div style="width: 500px !important;" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Film címe:</span>
             </div>
-            <input type="text" class="form-control" placeholder="Film cím felvitel" aria-label="Username" aria-describedby="basic-addon1">
+            <input id="film_title" type="text" class="form-control" placeholder="Film cím felvitel" aria-label="Username" aria-describedby="basic-addon1" name="film_title" onkeyup="film_cim_kiiratas()">
         </div>
+
+
 
         <div style="width: 500px !important;" class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Film hossza:</span>
             </div>
-            <input type="text" class="form-control" placeholder="Film hossz felvitel" aria-label="Username" aria-describedby="basic-addon1">
+            <input id="film_length" inputmode="numeric" pattern="[0-9]*" type="number" class="form-control" placeholder="Film hossz felvitel" aria-label="Username" aria-describedby="basic-addon1" name="film_length" onkeyup="film_hossz_kiiratas()">
         </div>
 
-        <div class="form-group">
+
+        <div style="width: 500px !important;" class="form-group mb-3">
             <label class="input-group-text" for="exampleFormControlTextarea1">Film leírás</label>
-            <textarea style="width: 500px !important;" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            <textarea id="film_description" style="width: 500px !important;" class="form-control" name="film_description" rows="5" onkeyup="film_leiras_kiiratas()"></textarea>
         </div>
 
+        <!--
+        <div style="width: 500px !important;" class="input-group mb-3">
+            <input accept="image/*" type="file" class="form-control" id="inputGroupFile01">
+            <input accept="image/*" type='file' id="imgInp" />
+            <img id="blah" src="#" alt="your image" />
+        </div>
+        -->
+        <div class="input-group mb-3" style="width: 500px !important;">
+            <input accept="image/*" class="form-control" type="file" name="image" onchange="preview()">
+        </div>
+
+        <input class="btn btn-outline-warning" type="submit" value="Submit" >
     </form>
+            </td>
+
+            <td style="vertical-align: middle; padding-left: 150px ">
+    <div class="card" onclick="" style="width: 300px; ">
+        <img class="card-img-top" id="frame" src="" width="50%"/>
+        <div class="card-body">
+            <h5 id='film_title_card' class="card-title"></h5>
+            <p id="film_description_card" class="card-text"></p>
+        </div>
+        <div class="card-body">
+            </a>
+            <button id="" type="button" data-bs-toggle="modal" data-bs-target="#myModal" name="'+elem.film_id+'" class="card-link btn btn-outline-success">Bővebben</button>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Értékelés: <a href=""><i class="fas fa-thumbs-up ertekeles_nyil_fel"></i> </a> <a href=""><i class="fas fa-thumbs-down ertekeles_nyil_le"></i></a> </li>
+                <li class="list-group-item" id="film_length_card"></li>
+                <li class="list-group-item">A third item</li>
+            </ul>
+        </div>
     </div>
+            </td>
+        </tr>
+    </table>
 
-
-
-
-
-
-
-
-    <footer id="footer">
+    <footer style="float: bottom !important;" id="footer">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores distinctio dolore eligendi fugiat id illo illum, inventore laborum maiores, minus, mollitia nemo provident qui quidem repudiandae voluptatem! Ab.</p>
     </footer>
 
@@ -119,7 +159,7 @@ if($_SESSION["admin"]==1){ ?>
 else{
     if(isset($_SESSION['email']))
     {
-        header('Location: http://zarodolgozat.test/kezdolap.php');
+        header('Location: http://zarodolgozat.test/main_page.php');
         exit;
     }else{
         header('Location: http://zarodolgozat.test/index.php');

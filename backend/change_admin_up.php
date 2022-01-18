@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./kapcsolat.php";
+include "./db_connection.php";
 
 $data = json_decode(file_get_contents("php://input"));
 $bevitel1 = $data->bevitel1;
@@ -13,7 +13,7 @@ if (isset($conn)) {
 }*/
 
 //törölni a felhasználót
-$sql = "update felhasznalok set felhasznalok_admin=1 where felhasznalok_id=$bevitel1";
+$sql = "update users set users_admin=1 where users_id=$bevitel1";
 
 if (isset($conn)) {
     if (mysqli_query($conn, $sql)) {

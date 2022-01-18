@@ -2,7 +2,7 @@ var app = angular.module('myApp', []);
 
 app.controller('customersCtrl', function($scope, $http) {
     $http.get("../backend/get_users.php")
-        .then(function (response) {$scope.felhasznalok = response.data;});
+        .then(function (response) {$scope.users = response.data;});
 
 
 
@@ -22,7 +22,7 @@ app.controller('customersCtrl', function($scope, $http) {
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
-                $scope.felhasznalok.splice(index, 1);
+                $scope.users.splice(index, 1);
             else
                 alert('Record not deleted.');
         });
@@ -36,7 +36,7 @@ app.controller('customersCtrl', function($scope, $http) {
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
-                $scope.felhasznalok.splice(index, 1);
+                $scope.users.splice(index, 1);
             else
                 alert('Record not deleted.');
         });
@@ -50,7 +50,7 @@ app.controller('customersCtrl', function($scope, $http) {
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
-                $scope.felhasznalok.splice(index, 1);
+                $scope.users.splice(index, 1);
             else
                 alert('Record not deleted.');
         });
