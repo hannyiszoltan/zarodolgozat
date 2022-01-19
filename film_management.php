@@ -71,7 +71,7 @@ if($_SESSION["admin"]==1){ ?>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Film felvitele</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">asd</a></li>
+                            <li><a class="dropdown-item" href="film_edit.php">Filmek szerkesztése</a></li>
                         </ul>
                     </li>
                 </ul>

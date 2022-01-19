@@ -20,7 +20,7 @@ if($_SESSION["admin"]==1){ ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-        <script src="../javascript/user_management_angular.js"></script>
+        <script src="../javascript/film_edit_angular.js"></script>
 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -61,11 +61,11 @@ if($_SESSION["admin"]==1){ ?>
                             Admin Eszközök
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Felhasználók kezelése</a></li>
+                            <li><a class="dropdown-item" href="user_management.php">Felhasználók kezelése</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="film_management.php">Film felvitele</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="film_edit.php">Filmek szerkesztése</a></li>
+                            <li><a class="dropdown-item" href="#">Filmek szerkesztése</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,30 +90,32 @@ if($_SESSION["admin"]==1){ ?>
         <table class="table table-bordered table-striped" style="width:50%">
             <tr>
                 <th>
-                    <button class="btn btn-primary" ng-click="sortBy('users_name')">Felhasználó név</button>
-                    <span class="sortorder" ng-show="propertyName === 'users_name'" ng-class="{reverse: reverse}"></span>
+                    <button class="btn btn-primary" ng-click="sortBy('film_title')">Film név</button>
+                    <span class="sortorder" ng-show="propertyName === 'film_title'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
-                    <button class="btn btn-primary" ng-click="sortBy('users_admin')">Rang</button>
-                    <span class="sortorder" ng-show="propertyName === 'users_admin'" ng-class="{reverse: reverse}"></span>
+                    <button class="btn btn-primary" ng-click="sortBy('film_id')">Film id</button>
+                    <span class="sortorder" ng-show="propertyName === 'film_id'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
                     Törlés
                 </th>
                 <th>
-                    Rang Módosítás
+                    Film Módosítás
                 </th>
 
             </tr>
-            <tr ng-repeat="x in users | orderBy:propertyName:reverse">
-                <td>{{ x.users_name }}</td>
-                <td>{{ x.users_admin }}</td>
-                <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.users_id);' value='Törlés'></td>
-
+            <tr ng-repeat="x in film | orderBy:propertyName:reverse">
+                <td>{{ x.film_title }}</td>
+                <td>{{ x.film_id }}</td>
+                <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.film_id);' value='Törlés'></td>
+            <!--
                 <td>
                     <input onclick="window.location.reload()" ng-if="x.users_admin==0" type='button' class="btn btn-outline-success" ng-click='rangup($index,x.users_id,x.users_admin);' value='Rang növel'>
                     <input onclick="window.location.reload()" ng-if="x.users_admin==1" type='button' class="btn btn-outline-danger" ng-click='rangdown($index,x.users_id,x.users_admin);' value='Rang csökkent'>
                 </td>
+             -->
+
             </tr>
         </table>
 
