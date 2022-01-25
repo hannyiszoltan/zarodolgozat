@@ -124,7 +124,7 @@ if($_SESSION["admin"]==1){ ?>
             <input accept="image/*" class="form-control" type="file" name="image" onchange="preview()">
         </div>
 
-        <input class="btn btn-outline-warning" type="submit" value="Submit" >
+        <input class="btn btn-outline-warning" type="submit" value="Film felvitele" >
     </form>
             </td>
 

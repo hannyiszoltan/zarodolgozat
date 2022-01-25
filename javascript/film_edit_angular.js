@@ -24,24 +24,28 @@ app.controller('customersCtrl', function($scope, $http) {
             if(response.data == 1)
                 $scope.film.splice(index, 1);
             else
-                alert('Record not deleted.');
+                alert('Sikertelen törlés!.');
         });
     }
 
 
-    $scope.rangup = function(index,userid){
+    $scope.edited = function(index, filmid, filmTitle,filmLength){
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/change_admin_up.php',
-            data: {bevitel1:userid,request_type:3},
+            url: 'http://zarodolgozat.test/backend/edit_film.php',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {index, input1: filmid,input2: filmTitle, input3: filmLength},
         }).then(function successCallback(response) {
             if(response.data == 1)
-                $scope.film.splice(index, 1);
+                alert('Sikeres makákó!');
             else
-                alert('Record not deleted.');
+                alert('Sikertelen makákó!');
         });
     }
-
+});
+/*
     $scope.rangdown = function(index,userid){
 
         $http({
@@ -57,7 +61,7 @@ app.controller('customersCtrl', function($scope, $http) {
     }
 
 
-});
 
+*/
 
 

@@ -80,7 +80,7 @@ if($_SESSION["admin"]==1){ ?>
 </div>
 
 <!-- The Modal -->
-<div class="modal" id="myModal">
+<div class="modal" id="filmCard">
     <div class="modal-dialog">
         <div class="modal-content">
 

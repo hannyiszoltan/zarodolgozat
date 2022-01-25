@@ -18,7 +18,7 @@ for (var elem of adatok) {
     sz += '</div>';
     sz += '<div class="card-body">';
     //sz += '</a>';
-    sz += '<button id="film_bovebben' + elem.film_id + '" type="button" onclick="modal(\''+elem.film_id+'\',\''+elem.film_title+'\',\''+elem.film_image+'\',\''+elem.film_description+'\')" data-bs-toggle="modal" data-bs-target="#myModal" name="'+elem.film_id+'" class="card-link btn btn-outline-success">' + "Bővebben" + '</button>';
+    sz += '<button id="film_bovebben' + elem.film_id + '" type="button" onclick="modal(\''+elem.film_id+'\',\''+elem.film_title+'\',\''+elem.film_image+'\',\''+elem.film_description+'\')" data-bs-toggle="modal" data-bs-target="#filmCard" name="'+elem.film_id+'" class="card-link btn btn-outline-success">' + "Bővebben" + '</button>';
     sz += '<ul class="list-group list-group-flush">';
     sz += '<li class="list-group-item">Értékelés: ' + elem.film_review + ' <div style="display: flex">     <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n    <div class="rating" > <i class="far fa-star-half"></i><i class="far fa-star-half fa-flip-horizontal"></i></div>\n </div> </li>';
     sz += '<li class="list-group-item">' + elem.film_length + ' perc</li>';
@@ -33,7 +33,7 @@ for (var elem of adatok) {
 
 
 
-modal=(id,title,image,description,)=> {
+modal=(id,title,image,description)=> {
     document.getElementById("modal-fejlec").innerText = title;
     let modal_content = '<img class="modal-image" src="http://zarodolgozat.test/backend/kepek/' + image + '" alt="film_kép">';
     modal_content += '<p class="modal-leiras">' + description + '</p>';

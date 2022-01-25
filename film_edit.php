@@ -79,15 +79,14 @@ if($_SESSION["admin"]==1){ ?>
     </nav>
 
 
-
-    <h1>Felhasználók</h1>
+    <h1 style="margin-bottom: 20px">Filmek módosítása</h1>
 
 
     <div ng-app="myApp" ng-controller="customersCtrl">
 
 
 
-        <table class="table table-bordered table-striped" style="width:50%">
+        <table class="table table-bordered table-striped" style="width:50%; margin-left: 30px">
             <tr>
                 <th>
                     <button class="btn btn-primary" ng-click="sortBy('film_title')">Film név</button>
@@ -98,6 +97,10 @@ if($_SESSION["admin"]==1){ ?>
                     <span class="sortorder" ng-show="propertyName === 'film_id'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
+                    <button class="btn btn-primary" ng-click="sortBy('film_length')">Film hossz</button>
+                    <span class="sortorder" ng-show="propertyName === 'film_length'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
                     Törlés
                 </th>
                 <th>
@@ -106,9 +109,21 @@ if($_SESSION["admin"]==1){ ?>
 
             </tr>
             <tr ng-repeat="x in film | orderBy:propertyName:reverse">
-                <td>{{ x.film_title }}</td>
-                <td>{{ x.film_id }}</td>
+
+
+                <td> <input style="width: auto" ng-model="x.film_title" type="text" value="{{ x.film_title }}" name="film_title_input"></td>
+                <td style="text-align: center !important;"> <span  ng-model="x.film_id" value="" name="film_id">{{ x.film_id }}</span></td>
+
+                <td style="display: flex !important;"> <input style="width: 3em; " ng-model="x.film_length" type="number" value="{{ x.film_length }}" name="film_length_input">perc</td>
+
                 <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.film_id);' value='Törlés'></td>
+                <td><input type="button" class="btn btn-outline-warning" ng-click='edited($index,x.film_id,x.film_title,x.film_length);' value="Módosítások mentése"></td>
+
+
+                <!--
+                    <td><span contenteditable="true">{{ x.film_title }}</span></td>
+                    <td><span contenteditable="true">{{ x.film_id }}</span></td>
+                -->
             <!--
                 <td>
                     <input onclick="window.location.reload()" ng-if="x.users_admin==0" type='button' class="btn btn-outline-success" ng-click='rangup($index,x.users_id,x.users_admin);' value='Rang növel'>
