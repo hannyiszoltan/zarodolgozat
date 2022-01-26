@@ -84,7 +84,9 @@ if($_SESSION["admin"]==1){ ?>
         </div>
     </nav>
 
-    <table>
+    <h1 style="margin-left: 20px;margin-right: 20px">Film Felvitele</h1>
+
+    <table style="margin-left: 30px">
         <tr>
             <td style="vertical-align: top">
     <form enctype="multipart/form-data" style="padding: 15px !important; "  action="http://zarodolgozat.test/backend/post_film.php" method="post">
@@ -124,7 +126,7 @@ if($_SESSION["admin"]==1){ ?>
             <input accept="image/*" class="form-control" type="file" name="image" onchange="preview()">
         </div>
 
-        <input class="btn btn-outline-warning" type="submit" value="Film felvitele" >
+        <input style="margin-left: -20px !important;" class="btn btn-outline-warning" type="submit" value="Film felvitele" >
     </form>
             </td>
 

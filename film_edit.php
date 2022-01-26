@@ -79,7 +79,7 @@ if($_SESSION["admin"]==1){ ?>
     </nav>
 
 
-    <h1 style="margin-bottom: 20px">Filmek módosítása</h1>
+    <h1 style="margin-bottom: 20px;margin-left: 20px">Filmek módosítása</h1>
 
 
     <div ng-app="myApp" ng-controller="customersCtrl">
@@ -101,6 +101,10 @@ if($_SESSION["admin"]==1){ ?>
                     <span class="sortorder" ng-show="propertyName === 'film_length'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
+                    <button class="btn btn-primary" ng-click="sortBy('film_description')">Film leírás</button>
+                    <span class="sortorder" ng-show="propertyName === 'film_description'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
                     Törlés
                 </th>
                 <th>
@@ -111,13 +115,15 @@ if($_SESSION["admin"]==1){ ?>
             <tr ng-repeat="x in film | orderBy:propertyName:reverse">
 
 
-                <td> <input style="width: auto" ng-model="x.film_title" type="text" value="{{ x.film_title }}" name="film_title_input"></td>
+                <td> <input style="width: auto" ng-model="x.film_title" type="text" value="" name="film_title_input"></td>
                 <td style="text-align: center !important;"> <span  ng-model="x.film_id" value="" name="film_id">{{ x.film_id }}</span></td>
 
                 <td style="display: flex !important;"> <input style="width: 3em; " ng-model="x.film_length" type="number" value="{{ x.film_length }}" name="film_length_input">perc</td>
 
+                <td><textarea rows="5" cols="30" ng-model="x.film_description" name="film_description_input" >{{ x.film_description }}</textarea></td>
+
                 <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.film_id);' value='Törlés'></td>
-                <td><input type="button" class="btn btn-outline-warning" ng-click='edited($index,x.film_id,x.film_title,x.film_length);' value="Módosítások mentése"></td>
+                <td><input type="button" class="btn btn-outline-warning" ng-click='edited($index,x.film_id,x.film_title,x.film_length,x.film_description);' value="Módosítások mentése"></td>
 
 
                 <!--

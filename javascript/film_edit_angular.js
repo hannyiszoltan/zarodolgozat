@@ -29,14 +29,14 @@ app.controller('customersCtrl', function($scope, $http) {
     }
 
 
-    $scope.edited = function(index, filmid, filmTitle,filmLength){
+    $scope.edited = function(index, filmid, filmTitle, filmLength, filmDescription){
         $http({
             method: 'post',
             url: 'http://zarodolgozat.test/backend/edit_film.php',
             headers: {
                 'Content-Type': 'application/json'
             },
-            data: {index, input1: filmid,input2: filmTitle, input3: filmLength},
+            data: {index, input1: filmid, input2: filmTitle, input3: filmLength, input4: filmDescription},
         }).then(function successCallback(response) {
             if(response.data == 1)
                 alert('Sikeres makákó!');

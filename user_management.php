@@ -80,14 +80,14 @@ if($_SESSION["admin"]==1){ ?>
 
 
 
-    <h1>Felhasználók</h1>
+    <h1 style="margin-left: 20px;margin-bottom: 20px">Felhasználók</h1>
 
 
     <div ng-app="myApp" ng-controller="customersCtrl">
 
 
 
-        <table class="table table-bordered table-striped" style="width:50%">
+        <table class="table table-bordered table-striped" style="width:50%;margin-left: 30px">
             <tr>
                 <th>
                     <button class="btn btn-primary" ng-click="sortBy('users_name')">Felhasználó név</button>
@@ -107,7 +107,7 @@ if($_SESSION["admin"]==1){ ?>
             </tr>
             <tr ng-repeat="x in users | orderBy:propertyName:reverse">
                 <td>{{ x.users_name }}</td>
-                <td>{{ x.users_admin }}</td>
+                <td style="text-align: center">{{ x.users_admin }}</td>
                 <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.users_id);' value='Törlés'></td>
 
                 <td>

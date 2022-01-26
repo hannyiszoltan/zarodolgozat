@@ -8,6 +8,7 @@ $request = json_decode($postdata);
 $input1 = $request->input1;
 $input2 = $request->input2;
 $input3 = $request->input3;
+$input4 = $request->input4;
 
 /*$bevitel1=$_POST["bevitel1"];
 $bevitel2=$_POST["bevitel2"];*/
@@ -20,7 +21,7 @@ if (isset($conn)) {
 }*/
 
 //módosítani a film adatait
-$sql = "update film_data set film_title='$input2',film_length=$input3 where film_id=$input1";
+$sql = "update film_data set film_title='$input2',film_length=$input3,film_description='$input4' where film_id=$input1";
 
 if (isset($conn)) {
     if (mysqli_query($conn, $sql)) {
