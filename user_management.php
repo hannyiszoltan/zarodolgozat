@@ -130,10 +130,10 @@ if($_SESSION["admin"]==1){ ?>
 else{
     if(isset($_SESSION['email']))
     {
-        header('Location: http://zarodolgozat.test/main_page.php');
+        header('Location: main_page.php');
         exit;
     }else{
-        header('Location: http://zarodolgozat.test/index.php');
+        header('Location: index.php');
     }
 
 }

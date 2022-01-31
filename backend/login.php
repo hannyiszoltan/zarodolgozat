@@ -42,7 +42,6 @@ if (isset($conn)) {
 
             }
 
-
         }
         else
         {

@@ -4,7 +4,7 @@ header("Content-type: Application/json; charset=utf8");
 
 $id = $_GET['id'];
 
-$film_comments="SELECT * FROM ertekeles WHERE film_id='$id'";
+$film_comments="SELECT * FROM review WHERE film_id='$id'";
 
 if (isset($conn)) {
     $comments_result=mysqli_query($conn,$film_comments);

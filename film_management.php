@@ -89,7 +89,7 @@ if($_SESSION["admin"]==1){ ?>
     <table style="margin-left: 30px">
         <tr>
             <td style="vertical-align: top">
-    <form enctype="multipart/form-data" style="padding: 15px !important; "  action="http://zarodolgozat.test/backend/post_film.php" method="post">
+    <form enctype="multipart/form-data" style="padding: 15px !important; "  action="/backend/post_film.php" method="post">
 
 
 
@@ -161,10 +161,10 @@ if($_SESSION["admin"]==1){ ?>
 else{
     if(isset($_SESSION['email']))
     {
-        header('Location: http://zarodolgozat.test/main_page.php');
+        header('Location: ../main_page.php');
         exit;
     }else{
-        header('Location: http://zarodolgozat.test/index.php');
+        header('Location: /index.php');
     }
 
 }

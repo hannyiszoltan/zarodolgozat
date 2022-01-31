@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['email']))
 {
-    header('Location: http://zarodolgozat.test/index.php');
+    header('Location: ../index.php');
     exit;
 }
 ?>

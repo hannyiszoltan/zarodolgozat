@@ -29,7 +29,7 @@
 
 
             <div class="modal-body">
-                <form method="post" action="http://zarodolgozat.test/backend/login.php">
+                <form method="post" action="/backend/login.php">
 
                     <p>E-mail: <input type="text" name="login_email"></p>
                     <p>Jelszó: <input type="password" name="login_password"></p>
@@ -68,7 +68,7 @@
                 <!-- Modal body -->
                 <div class="modal-body">
 
-                    <form method="post" action="http://zarodolgozat.test/backend/register.php">
+                    <form method="post" action="../backend/register.php">
 
                         <p>Felhasználónév: <input type="text" name="reg_username"></p>
                         <p>E-mail: <input type="text" name="reg_email"></p>

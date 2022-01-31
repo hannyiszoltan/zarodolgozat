@@ -18,7 +18,7 @@ app.controller('customersCtrl', function($scope, $http) {
     $scope.remove = function(index,userid){
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/delete_film.php',
+            url: '../backend/delete_film.php',
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
@@ -32,7 +32,7 @@ app.controller('customersCtrl', function($scope, $http) {
     $scope.edited = function(index, filmid, filmTitle, filmLength, filmDescription){
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/edit_film.php',
+            url: '../backend/edit_film.php',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -50,7 +50,7 @@ app.controller('customersCtrl', function($scope, $http) {
 
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/change_admin_down.php',
+            url: '../backend/change_admin_down.php',
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)

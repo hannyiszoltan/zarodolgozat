@@ -18,7 +18,7 @@ app.controller('customersCtrl', function($scope, $http) {
     $scope.remove = function(index,userid){
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/delete_user.php',
+            url: '/backend/delete_user.php',
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
@@ -32,7 +32,7 @@ app.controller('customersCtrl', function($scope, $http) {
     $scope.rangup = function(index,userid){
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/change_admin_up.php',
+            url: '/backend/change_admin_up.php',
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
@@ -46,7 +46,7 @@ app.controller('customersCtrl', function($scope, $http) {
 
         $http({
             method: 'post',
-            url: 'http://zarodolgozat.test/backend/change_admin_down.php',
+            url: '/backend/change_admin_down.php',
             data: {bevitel1:userid,request_type:3},
         }).then(function successCallback(response) {
             if(response.data == 1)
