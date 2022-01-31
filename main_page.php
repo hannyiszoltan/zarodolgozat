@@ -64,8 +64,33 @@ include "./backend/check_login.php";
 </nav>
 
 
-<div class="row" id="tablazat">
+<div style="margin-right: unset;margin-left: unset" class="row" id="tablazat">
 
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="filmCard">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 id="modal-fejlec" class="modal-title"></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div id="modal-torzs" class="modal-body">
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bezárás</button>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 
