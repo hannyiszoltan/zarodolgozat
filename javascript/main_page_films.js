@@ -22,7 +22,7 @@ for (var elem of adatok) {
     sz += '<ul class="list-group list-group-flush">';
     sz += '<li class="list-group-item">Értékelés: ' + elem.film_review + ' <div style="display: flex"> </li>';
     sz += '<li class="list-group-item">' + elem.film_length + ' perc</li>';
-    sz += '<li class="list-group-item">' + "A third item" + '</li>';
+    sz += '<li class="list-group-item"><button onclick="favorite_star(\''+elem.film_id+'\')"> <i id="stars'+elem.film_id+'"  class="far fa-star"> </i> <span>kedvencekhez ad </span> </button> </li>';
     sz += '</ul>';
     sz += '</div>';
     sz += '</div>';
@@ -46,6 +46,24 @@ modal=(id,title,image,description)=> {
 function preview() {
     frame.src=URL.createObjectURL(event.target.files[0]);
 }
+
+function favorite_star(star_id){
+    let stars="stars"
+    let element = document.getElementById(stars+star_id)
+    //alert(element);
+
+    if(element.className=='far fa-star'){
+        element.className='fas fa-star';
+    }else{
+        element.className='far fa-star';
+    }
+
+
+
+
+}
+
+
     /*let kommentek = fetch('../backend/get_comments.php?id='+id+'',
         {
             method: 'GET',
