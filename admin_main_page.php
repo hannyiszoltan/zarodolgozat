@@ -117,6 +117,7 @@ if($_SESSION["admin"]==1){ ?>
 <footer id="footer">
     Üdv Admin!
     <br>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus ad amet consequuntur, cupiditate ea earum excepturi facilis inventore laudantium molestias, mollitia quae quia, reiciendis repellat sed similique ullam voluptatum.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae consectetur debitis distinctio ducimus in ipsam magni necessitatibus omnis porro rem similique, sit soluta, sunt, totam ullam veniam. Necessitatibus, unde?
 </footer>
 
