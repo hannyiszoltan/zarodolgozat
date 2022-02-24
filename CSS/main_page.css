@@ -36,10 +36,16 @@ footer{
     border-radius: 25px;
     width: 40%;
 }
-#modal-torzs{
+#modal-bodyContent{
     display: flex;
 }
-.modal-leiras{
+#comments{
+    border-top: 1px solid black;
+}
+#modal-contents-description{
+    margin-left: 10px !important;
+}
+.modal-description{
     flex: 1 1 auto;
     padding: 10px 10px 10px 10px;
 }

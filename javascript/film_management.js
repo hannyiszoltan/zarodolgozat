@@ -6,7 +6,7 @@ function init(){
 var area = document.getElementById('film_description_card');
 if (area.addEventListener) {
     area.addEventListener('input', function() {
-        //
+
     }, false);
 } else if (area.attachEvent) {
     area.attachEvent('onpropertychange', function() {

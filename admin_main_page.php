@@ -92,7 +92,7 @@ if($_SESSION["admin"]==1){ ?>
             </div>
 
             <!-- Modal body -->
-            <div id="modal-torzs" class="modal-body">
+            <div id="modal-bodyContent" class="modal-body row">
 
             </div>
 

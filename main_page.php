@@ -1,9 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include "./backend/check_login.php";
-?>
-
+include "./backend/check_login.php"; ?>
 <!doctype html>
 <html lang="hu">
 <head>
@@ -80,7 +78,7 @@ include "./backend/check_login.php";
             </div>
 
             <!-- Modal body -->
-            <div id="modal-torzs" class="modal-body">
+            <div id="modal-bodyContent" class="modal-body row">
 
             </div>
 
