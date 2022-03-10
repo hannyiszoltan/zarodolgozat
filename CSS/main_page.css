@@ -74,7 +74,7 @@ a{
 }
 body{
     background-color: #22c1c3 !important;
-
+    font-family:Verdana, sans-serif !important;
 }
 .rating{
     letter-spacing: -0.9rem !important;

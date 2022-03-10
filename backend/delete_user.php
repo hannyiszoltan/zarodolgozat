@@ -7,7 +7,7 @@ $bevitel1 = $data->bevitel1;
 
 
 //törölni az üzeneteket
-$sql = "delete from review where user_id=$bevitel1";
+$sql = "delete from review where review_user_id=$bevitel1";
 if (isset($conn)) {
     mysqli_query($conn, $sql);
 }

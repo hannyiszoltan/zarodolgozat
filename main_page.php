@@ -91,19 +91,14 @@ include "./backend/check_login.php"; ?>
     </div>
 </div>
 
-
-
-
-
-
-
+<div id="adminstatus" style="display: none";><?php echo $_SESSION['admin']; ?></div>
 
 
 
 
 <footer id="footer">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam ea est eveniet, hic ipsam, ipsum itaque maiores minima nostrum qui quo, reprehenderit veniam voluptas voluptate voluptatibus voluptatum. Dolorem, qui?
-
+    Készítette: Hannyis Zoltán
+    <p>© 2022 Copyright: filmek.com</p>
 </footer>
 </body>
 </html>

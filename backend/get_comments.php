@@ -1,10 +1,12 @@
 <?php
+session_start();
 include "db_connection.php";
 header("Content-type: Application/json; charset=utf8");
 
 $id = $_GET['id'];
+$user_id=$_SESSION['id'];
 
-$film_comments="SELECT users_name,review_content FROM review INNER JOIN users ON review.review_user_id=users.users_id WHERE review_film_id='$id'";
+$film_comments="SELECT review_id, users_name, review_content FROM review INNER JOIN users ON review.review_user_id=users.users_id WHERE review_film_id='$id'";
 
 if (isset($conn)) {
     $comments_result=mysqli_query($conn,$film_comments);

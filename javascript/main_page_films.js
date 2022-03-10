@@ -81,14 +81,27 @@ function show_comments(id){
 
 function comment_onModal(commentData){
     let comment="";
+    let admin=document.getElementById("adminstatus").innerText;
+    console.log(commentData);
+
     for (let item of commentData){
-        comment+='<h1>'+item.users_name+'</h1>';
+        comment+='<h1>'+item.review_users_name+'</h1>';
         comment+='<span>'+item.review_content+'</span>';
+
+        if (admin==1){
+            comment+='<form action="../backend/delete_comments.php" method="post">'
+            comment+='<button type="submit" name="id" value="\''+item.review_id+'\'" onclick="delete_comment(\''+item.review_id+'\')">Komment törlése</button>'; //lehet kell a ++
+            comment+='</form>'
+        }
 
     }
     document.getElementById("comments").innerHTML=comment;
 }
 
+function delete_comment(comment_id){
+
+
+}
 
 
 /*

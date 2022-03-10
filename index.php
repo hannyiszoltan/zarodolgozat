@@ -92,8 +92,13 @@
     </div>
 
 
+<footer id="footer">
+    Készítette: Hannyis Zoltán
+    <p>© 2022 Copyright: filmek.com</p>
+</footer>
 
 </body>
+
 </html>
 
 <?php

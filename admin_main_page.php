@@ -23,6 +23,7 @@ if($_SESSION["admin"]==1){ ?>
     <script src="javascript/main_page_films.js"></script>
     <script src="javscript/favorite_star.js"></script>
 
+
     <title>Kezdőlap</title>
 </head>
 <body>
@@ -105,20 +106,14 @@ if($_SESSION["admin"]==1){ ?>
     </div>
 </div>
 
-
-
-
-
-
+<div id="adminstatus" style="display: none";><?php echo $_SESSION['admin']; ?></div>
 
 
 
 
 <footer id="footer">
-    Üdv Admin!
-    <br>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus ad amet consequuntur, cupiditate ea earum excepturi facilis inventore laudantium molestias, mollitia quae quia, reiciendis repellat sed similique ullam voluptatum.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae consectetur debitis distinctio ducimus in ipsam magni necessitatibus omnis porro rem similique, sit soluta, sunt, totam ullam veniam. Necessitatibus, unde?
+Készítette: Hannyis Zoltán
+   <p>© 2022 Copyright: filmek.com</p>
 </footer>
 
 </body>

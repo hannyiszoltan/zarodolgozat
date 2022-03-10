@@ -86,7 +86,7 @@ if($_SESSION["admin"]==1){ ?>
 
 
 
-        <table class="table table-bordered table-striped" style="width:50%; margin-left: 30px">
+        <table class="table table-bordered table-striped" style="width:50%; margin-left: 30px;">
             <tr>
                 <th>
                     <button class="btn btn-primary" ng-click="sortBy('film_title')">Film név</button>
@@ -144,7 +144,8 @@ if($_SESSION["admin"]==1){ ?>
 
 
     <footer id="footer">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores distinctio dolore eligendi fugiat id illo illum, inventore laborum maiores, minus, mollitia nemo provident qui quidem repudiandae voluptatem! Ab.</p>
+        Készítette: Hannyis Zoltán
+        <p>© 2022 Copyright: filmek.com</p>
     </footer>
 
     </body>

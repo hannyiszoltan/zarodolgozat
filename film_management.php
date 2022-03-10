@@ -89,7 +89,7 @@ if($_SESSION["admin"]==1){ ?>
     <table style="margin-left: 30px">
         <tr>
             <td style="vertical-align: top">
-    <form enctype="multipart/form-data" style="padding: 15px !important; "  action="/backend/post_film.php" method="post">
+    <form enctype="multipart/form-data" style="padding: 15px !important; margin-bottom: 30px"  action="/backend/post_film.php" method="post">
 
 
 
@@ -152,7 +152,8 @@ if($_SESSION["admin"]==1){ ?>
     </table>
 
     <footer style="float: bottom !important;" id="footer">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet asperiores distinctio dolore eligendi fugiat id illo illum, inventore laborum maiores, minus, mollitia nemo provident qui quidem repudiandae voluptatem! Ab.</p>
+        Készítette: Hannyis Zoltán
+        <p>© 2022 Copyright: filmek.com</p>
     </footer>
 
     </body>
