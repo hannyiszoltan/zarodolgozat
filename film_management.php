@@ -10,7 +10,6 @@ if($_SESSION["admin"]==1){ ?>
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
         <link rel="stylesheet" href="CSS/main_page.css">
         <link rel="stylesheet" href="CSS/film_management.css">
         <script src="javascript/main_page_films.js"></script>
@@ -86,7 +85,7 @@ if($_SESSION["admin"]==1){ ?>
 
     <h1 style="margin-left: 20px;margin-right: 20px">Film Felvitele</h1>
 
-    <table style="margin-left: 30px">
+    <table style="margin-left: 30px;overflow-x:auto">
         <tr>
             <td style="vertical-align: top">
     <form enctype="multipart/form-data" style="padding: 15px !important; margin-bottom: 30px"  action="/backend/post_film.php" method="post">

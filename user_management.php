@@ -85,7 +85,7 @@ if($_SESSION["admin"]==1){ ?>
 
     <div ng-app="myApp" ng-controller="customersCtrl">
 
-        <table class="table table-bordered table-striped" style="width:50%;margin-left: 30px">
+        <table class="table table-bordered table-striped" style="width:50%;margin-left: 30px;overflow-x:auto">
             <tr>
                 <th>
                     <button class="btn btn-primary" ng-click="sortBy('users_name')">Felhasználó név</button>
