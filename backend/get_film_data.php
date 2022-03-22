@@ -15,7 +15,6 @@ if (isset($data_result)) {
     if (mysqli_num_rows($data_result) > 0) {
 
         while($row = mysqli_fetch_assoc($data_result)) {
-            //echo "id: " . $row["film_cim"]. " - Name: " . $row["film_hossz"]. " " . $row["film_id"]. "<br>";
             array_push($film_data_array,$row);
         }
 

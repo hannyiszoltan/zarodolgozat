@@ -18,10 +18,11 @@ if($_SESSION["admin"]==1){ ?>
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <script src="javascript/main_page_films.js"></script>
-    <script src="javscript/favorite_star.js"></script>
 
 
     <title>Kezdőlap</title>
@@ -37,7 +38,7 @@ if($_SESSION["admin"]==1){ ?>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Kedvencek</a>
+                    <a class="nav-link active" aria-current="page" href="favorites.php">Kedvencek</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Forum</a>
@@ -77,7 +78,7 @@ if($_SESSION["admin"]==1){ ?>
 </nav>
 
 
-<div style="margin-right: unset;margin-left: unset" class="row" id="tablazat">
+<div style="margin-right: unset;margin-left: unset" class="row firstDiv" id="tablazat">
 
 </div>
 

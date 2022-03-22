@@ -1,17 +1,17 @@
 window.onload = function() {
-fetch('../backend/get_film_data.php')
-.then(x => x.json())
-.then(y => megjelenit(y))
+    fetch('../backend/get_favorites.php')
+        .then(x => x.json())
+        .then(y => megjelenit(y))
 }
 
 function megjelenit(filmData){
 
-console.log(filmData);
+    console.log(filmData);
 
-let sz="";
+    let sz="";
 
-for (var item of filmData) {
-        //if (item.favorite_film_id!=item.film_id) {
+
+    for (var item of filmData) {
             //sz += '<a style="all: unset" data-bs-toggle="modal" data-bs-target="#myModal">';
             sz += '<div class="card" onclick="" style="width: 300px;">';
             sz += '<img src="../backend/kepek/' + item.film_image + '" class="card-img-top" alt="film_kép">';
@@ -26,7 +26,7 @@ for (var item of filmData) {
             sz += '<li class="list-group-item">Értékelés: ' + item.film_review + ' <div style="display: flex"> </li>';
             sz += '<li class="list-group-item">' + item.film_length + ' perc</li>';
             sz += '<div id="form_container">';
-            sz += '<li class="list-group-item"><button id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="far fa-star"></i> <span>kedvencekhez ad </span> </input> </li>';
+            sz += '<li class="list-group-item"><button id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="fas fa-star"></i> <span>kedvencekhez ad </span> </input> </li>';
             sz += '</div>';
             sz += '</ul>';
             sz += '</div>';
@@ -34,11 +34,7 @@ for (var item of filmData) {
 
             document.getElementById("tablazat").innerHTML = sz;
 
-
-
-
-
-}}
+    }}
 
 
 modal=(id,title,image,description)=> {
@@ -56,7 +52,7 @@ modal=(id,title,image,description)=> {
     modal_content += '</form>';
     modal_content += '<div id="comments"></div>';
 
-        document.getElementById("modal-bodyContent").innerHTML = modal_content;
+    document.getElementById("modal-bodyContent").innerHTML = modal_content;
 }
 
 
