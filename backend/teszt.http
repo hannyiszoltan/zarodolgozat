@@ -1,0 +1,4 @@
+GET http://zarodolgozat.test/backend/get_film_data.php
+Accept: application/json
+
+###

@@ -26,7 +26,7 @@ function megjelenit(filmData){
             sz += '<li class="list-group-item">Értékelés: ' + item.film_review + ' <div style="display: flex"> </li>';
             sz += '<li class="list-group-item">' + item.film_length + ' perc</li>';
             sz += '<div id="form_container">';
-            sz += '<li class="list-group-item"><button id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="fas fa-star"></i> <span>kedvencekhez ad </span> </input> </li>';
+            sz += '<li class="list-group-item"><button class="btn btn-outline-danger" id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="fas fa-star"></i> <span>kedvencekből eltávolít </span> </input> </li>';
             sz += '</div>';
             sz += '</ul>';
             sz += '</div>';

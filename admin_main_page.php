@@ -108,7 +108,7 @@ if($_SESSION["admin"]==1){ ?>
 </div>
 
 <div id="adminstatus" style="display: none";><?php echo $_SESSION['admin']; ?></div>
-
+<div id="userstatus" style="display: none";><?php echo $_SESSION['id']; ?></div>
 
 
 

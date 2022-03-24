@@ -13,7 +13,7 @@ if (isset($conn)) {
     }
     else
     {
-        $sql="DELETE FROM `favorite` WHERE favorite_film_id=$favorite_film_id";
+        $sql="DELETE FROM `favorite` WHERE favorite_film_id=$favorite_film_id and favorite_user_id=$user_id";
 
         mysqli_query($conn, $sql) or die(mysqli_error($conn));
         header("Location: ../favorites.php");

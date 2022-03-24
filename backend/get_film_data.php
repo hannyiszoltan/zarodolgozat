@@ -1,8 +1,11 @@
 <?php
+session_start();
 include "db_connection.php";
 header("Content-type: Application/json; charset=utf8");
 
-$film_data = "SELECT * FROM film_data";
+$user_id=$_SESSION["id"];
+
+$film_data = "SELECT * FROM `film_data` LEFT JOIN favorite ON film_data.film_id=favorite.favorite_film_id ORDER BY favorite_user_id=$user_id DESC;";
 
 if (isset($conn)) {
     $data_result = mysqli_query($conn, $film_data);

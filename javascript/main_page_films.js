@@ -1,16 +1,20 @@
 window.onload = function() {
 fetch('../backend/get_film_data.php')
 .then(x => x.json())
-.then(y => megjelenit(y))
+.then(y => megjelenit(y));
 }
 
 function megjelenit(filmData){
 
 console.log(filmData);
 
-let sz="";
+    var clean = filmData.filter((filmData, index, self) =>
+        index === self.findIndex((t) => (t.save === filmData.save && t.film_title === filmData.film_title)));
 
-for (var item of filmData) {
+console.log(clean);
+let sz="";
+let user_id=document.getElementById("userstatus").innerText;
+for (var item of clean) {
         //if (item.favorite_film_id!=item.film_id) {
             //sz += '<a style="all: unset" data-bs-toggle="modal" data-bs-target="#myModal">';
             sz += '<div class="card" onclick="" style="width: 300px;">';
@@ -26,7 +30,13 @@ for (var item of filmData) {
             sz += '<li class="list-group-item">Értékelés: ' + item.film_review + ' <div style="display: flex"> </li>';
             sz += '<li class="list-group-item">' + item.film_length + ' perc</li>';
             sz += '<div id="form_container">';
-            sz += '<li class="list-group-item"><button id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="far fa-star"></i> <span>kedvencekhez ad </span> </input> </li>';
+            if (item.favorite_user_id!=user_id) {
+                sz += '<li class="list-group-item"><button class="btn btn-outline-success" id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="far fa-star"></i> <span>kedvencekhez ad </span> </input> </li>';
+            }
+            else{
+                sz += '<li class="list-group-item"><button class="btn btn-outline-success" id="favorite_button' + item.film_id + '" onclick="favorite_star(\'' + item.film_id + '\')"> <i id="stars' + item.film_id + '" class="fas fa-star"></i> <span>kedvencekből elvesz </span> </input> </li>';
+
+            }
             sz += '</div>';
             sz += '</ul>';
             sz += '</div>';
