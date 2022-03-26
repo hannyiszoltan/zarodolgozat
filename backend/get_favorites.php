@@ -5,7 +5,7 @@ header("Content-type: Application/json; charset=utf8");
 
 $user_id=$_SESSION["id"];
 
-$favorite_data = "SELECT * FROM `film_data` RIGHT JOIN favorite ON film_id=favorite_film_id WHERE favorite_user_id=$user_id;";
+$favorite_data = "SELECT * FROM film_data RIGHT JOIN favorite ON film_id=favorite_film_id WHERE favorite_user_id=$user_id;";
 
 if (isset($conn)) {
     $data_result = mysqli_query($conn, $favorite_data);
@@ -29,4 +29,4 @@ if (isset($data_result)) {
 
 mysqli_close($conn);
 
-?><?php
+?>

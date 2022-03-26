@@ -98,6 +98,10 @@ if($_SESSION["admin"]==1){ ?>
 
             </div>
 
+            <div id="comments"">
+
+            </div>
+
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bezárás</button>
@@ -114,7 +118,7 @@ if($_SESSION["admin"]==1){ ?>
 
 <footer id="footer">
 Készítette: Hannyis Zoltán
-   <p>© 2022 Copyright: filmek.com</p>
+   <p>© 2022 Copyright: film.freecluster.eu</p>
 </footer>
 
 </body>

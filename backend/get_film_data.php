@@ -11,7 +11,6 @@ if (isset($conn)) {
     $data_result = mysqli_query($conn, $film_data);
 }
 
-
 $film_data_array=array();
 
 if (isset($data_result)) {
@@ -27,9 +26,6 @@ if (isset($data_result)) {
         echo 0;
     }
 }
-
-
-
 
 mysqli_close($conn);
 

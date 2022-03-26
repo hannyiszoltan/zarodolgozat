@@ -39,9 +39,7 @@ footer{
 #modal-bodyContent{
     display: flex;
 }
-#comments{
-    border-top: 1px solid black;
-}
+
 #modal-contents-description{
     margin-left: 10px !important;
 }
@@ -80,6 +78,16 @@ body{
     letter-spacing: -0.9rem !important;
     margin-right:3px !important;
     font-size: 25px !important
+}
+#comments{
+    border-top: 1px solid black;
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem !important;
+}
+#comment{
+    width: 70%;
+    resize: horizontal;
 }
 
 

@@ -35,9 +35,11 @@ if (isset($conn)) {
                 $_SESSION["admin"]=$row['users_admin'];
 
                 if ($_SESSION["admin"]==1){
+                    mysqli_close($conn);
                     header("Location: ../admin_main_page.php");
                 }
                 else{
+                    mysqli_close($conn);
                     header("Location: ../main_page.php");
                 }
 
@@ -47,8 +49,10 @@ if (isset($conn)) {
         else
         {
             session_destroy();
+            mysqli_close($conn);
             header("Location: ../main_page.php");
         }
+
     }
 }
 ?>

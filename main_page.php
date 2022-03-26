@@ -84,6 +84,10 @@ include "./backend/check_login.php"; ?>
 
             </div>
 
+            <div id="comments"">
+
+            </div>
+
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bezárás</button>
@@ -94,13 +98,13 @@ include "./backend/check_login.php"; ?>
 </div>
 
 <div id="adminstatus" style="display: none";><?php echo $_SESSION['admin']; ?></div>
-
+<div id="userstatus" style="display: none";><?php echo $_SESSION['id']; ?></div>
 
 
 
 <footer id="footer">
     Készítette: Hannyis Zoltán
-    <p>© 2022 Copyright: filmek.com</p>
+    <p>© 2022 Copyright: film.freecluster.eu</p>
 </footer>
 </body>
 </html>
