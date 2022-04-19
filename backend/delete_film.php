@@ -21,7 +21,7 @@ if (isset($conn)) {
         if (!unlink("kepek/$input2")){
             echo ($input2);
         }
-    } else {
+    }else {
         echo 0;
     }
 }
