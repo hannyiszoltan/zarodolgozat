@@ -41,21 +41,7 @@ if($_SESSION["admin"]==1){ ?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="favorites.php">Kedvencek</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Forum</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Toplisták
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="">Kaland</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Akció</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                        </ul>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Admin Eszközök
@@ -105,6 +91,10 @@ if($_SESSION["admin"]==1){ ?>
                     <span class="sortorder" ng-show="propertyName === 'film_description'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
+                    <button class="btn btn-primary" ng-click="sortBy('film_image')">Film kép neve</button>
+                    <span class="sortorder" ng-show="propertyName === 'film_image'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
                     Törlés
                 </th>
                 <th>
@@ -122,7 +112,9 @@ if($_SESSION["admin"]==1){ ?>
 
                 <td><textarea rows="5" cols="30" ng-model="x.film_description" name="film_description_input" >{{ x.film_description }}</textarea></td>
 
-                <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.film_id);' value='Törlés'></td>
+                <td style="text-align: center !important;"> <span  ng-model="x.film_image" value="" name="film_image">{{ x.film_image }}</span></td>
+
+                <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.film_id,x.film_image);' value='Törlés'></td>
                 <td><input type="button" class="btn btn-outline-warning" ng-click='edited($index,x.film_id,x.film_title,x.film_length,x.film_description);' value="Módosítások mentése"></td>
 
 

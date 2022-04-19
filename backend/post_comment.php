@@ -33,22 +33,17 @@ else{
             $sql="SELECT * FROM review WHERE review_film_id=$comment_film_id and review_user_id=$user_id";
 
             $query=mysqli_query($conn, $sql) or die(mysqli_error($conn));
-            $message = 'Már van kommented!';
 
-            echo "<SCRIPT> 
-            window.location.replace('../admin_main_page.php');
-            
-            alert('$message')
-
-            </SCRIPT>";
-            mysqli_close();
-
-            if (mysqli_num_rows($query) <= 0){
+            if(mysqli_num_rows($query) == 0){
                 $sql="INSERT INTO review (review_film_id, review_value, review_content, review_user_id) VALUES ($comment_film_id,$review_value,'$comment',$user_id)";
 
                 mysqli_query($conn, $sql) or die(mysqli_error($conn));
-                mysqli_close();
+
                 header("Location: ../admin_main_page.php");
+            }
+            else {
+                echo "Már van kommented!";
+
             }
         }
 

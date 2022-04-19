@@ -15,16 +15,19 @@ app.controller('customersCtrl', function($scope, $http) {
 
 
 // Remove record
-    $scope.remove = function(index,userid){
+    $scope.remove = function(index,filmid,filmimage){
         $http({
             method: 'post',
             url: '../backend/delete_film.php',
-            data: {bevitel1:userid,request_type:3},
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: {input1:filmid,input2:filmimage},
         }).then(function successCallback(response) {
             if(response.data == 1)
                 $scope.film.splice(index, 1);
             else
-                alert('Sikertelen törlés!.');
+                $scope.film.splice(index, 1);
         });
     }
 

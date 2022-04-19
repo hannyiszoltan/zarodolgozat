@@ -130,7 +130,7 @@ function comment_onModal(commentData){
 
             if (admin == 1) {
                 comment += '<form action="../backend/delete_comments.php" method="post">'
-                comment += '<button type="submit" name="id" value="' + item.review_id + '" onclick="delete_comment(\'' + item.review_id + '\')">Komment törlése</button>'; //lehet kell a ++
+                comment += '<button class="btn btn-outline-warning" type="submit" name="id" value="' + item.review_id + '" onclick="delete_comment(\'' + item.review_id + '\')">Komment törlése</button>'; //lehet kell a ++
                 comment += '</form>'
             }
 
