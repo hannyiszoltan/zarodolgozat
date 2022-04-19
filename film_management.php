@@ -128,7 +128,7 @@ if($_SESSION["admin"]==1){ ?>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Értékelés: <a href=""><i class="fas fa-thumbs-up ertekeles_nyil_fel"></i> </a> <a href=""><i class="fas fa-thumbs-down ertekeles_nyil_le"></i></a> </li>
                 <li class="list-group-item" id="film_length_card"></li>
-                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">Kedvenc</li>
             </ul>
         </div>
     </div>
