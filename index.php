@@ -78,7 +78,6 @@
 
                         <p>Jelszó újra: <input type="password" name="reg_password2"></p>
 
-                        <p><input type="checkbox" value="ok" name="stay_loged">maradjon bejelentkezve</p>
                         <p><input type="submit" class="btn btn-primary" value="Regisztráció"></p>
                     </form>
 

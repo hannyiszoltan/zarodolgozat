@@ -6,7 +6,6 @@ $username=$_POST["reg_username"];
 $email=$_POST["reg_email"];
 $password1=md5($_POST["reg_password1"].$code);
 $password2=md5($_POST["reg_password2"].$code);
-$stay_loged=$_POST["stay_loged"];
 $error="";
 
 
@@ -24,9 +23,6 @@ if ($password1=="")
 //Egyezik-e a két jelszó
 if ($password1!=$password2)
     $error.="A két jelszó nem megegyező!<br>";
-
-if ($stay_loged!="ok")
-    $error.="A felhasználási feltételek elfogadása kötelező!<br>";
 
 //Lehetséges-e a regisztráció?
 if ($error!="")
