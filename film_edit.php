@@ -91,8 +91,8 @@ if($_SESSION["admin"]==1){ ?>
                     <span class="sortorder" ng-show="propertyName === 'film_description'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
-                    <button class="btn btn-primary" ng-click="sortBy('film_image')">Film kép neve</button>
-                    <span class="sortorder" ng-show="propertyName === 'film_image'" ng-class="{reverse: reverse}"></span>
+                    <button class="btn btn-primary" ng-click="sortBy('film_id')">Film kép neve</button>
+                    <span class="sortorder" ng-show="propertyName === 'film_id'" ng-class="{reverse: reverse}"></span>
                 </th>
                 <th>
                     Törlés

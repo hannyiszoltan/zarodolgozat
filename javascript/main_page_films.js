@@ -55,7 +55,7 @@ window.onload = function() {
         })
         .then(function(review) {
 
-            console.log(review);
+            //console.log(review);
             let review_data="";
             for (var item of review){
                 review_data=item.review_value;

@@ -20,7 +20,7 @@ if (isset($data_result)) {
             array_push($film_data_array,$row);
         }
 
-        echo json_encode($film_data_array,JSON_UNESCAPED_UNICODE);
+        echo json_encode($film_data_array,JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK);
 
     } else {
         echo 0;
