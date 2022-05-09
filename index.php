@@ -33,7 +33,7 @@
             <div class="modal-body">
                 <form method="post" action="/backend/login.php">
 
-                    <p>E-mail: <input type="text" name="login_email"></p>
+                    <p>E-mail: <input type="email" name="login_email"></p>
                     <p>Jelszó: <input type="password" name="login_password"></p>
 
                     <p><input type="submit" class="btn btn-success" value="Bejelentkezés"></p>
@@ -73,7 +73,7 @@
                     <form method="post" action="../backend/register.php">
 
                         <p>Felhasználónév: <input type="text" name="reg_username"></p>
-                        <p>E-mail: <input type="text" name="reg_email"></p>
+                        <p>E-mail: <input type="email" name="reg_email"></p>
                         <p>Jelszó: <input type="password" name="reg_password1"></p>
 
                         <p>Jelszó újra: <input type="password" name="reg_password2"></p>
