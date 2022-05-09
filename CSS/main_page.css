@@ -43,6 +43,10 @@ footer{
 #modal-contents-description{
     margin-left: 10px !important;
 }
+#modal-comments{
+    margin-bottom: 2rem !important;
+
+}
 .modal-description{
     flex: 1 1 auto;
     padding: 10px 10px 10px 10px;
@@ -84,6 +88,9 @@ body{
     position: relative;
     flex: 1 1 auto;
     padding: 1rem !important;
+}
+#delete_comment{
+    margin-top: 1rem !important;
 }
 #comment{
     width: 70%;

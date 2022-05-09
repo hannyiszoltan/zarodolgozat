@@ -125,12 +125,15 @@ function comment_onModal(commentData){
     }
     else {
         for (let item of commentData) {
+            comment +='<div id="modal-comments">';
             comment += '<h1>' + item.users_name + '</h1>';
             comment += '<span>' + item.review_content + '</span>';
+            comment +='<hr>'
+            comment +='</div>';
 
             if (admin == 1) {
                 comment += '<form action="../backend/delete_comments.php" method="post">'
-                comment += '<button class="btn btn-outline-warning" type="submit" name="id" value="' + item.review_id + '" onclick="delete_comment(\'' + item.review_id + '\')">Komment törlése</button>'; //lehet kell a ++
+                comment += '<button id="delete_comment" class="btn btn-outline-warning" type="submit" name="id" value="' + item.review_id + '" onclick="delete_comment(\'' + item.review_id + '\')">Komment törlése</button>'; //lehet kell a ++
                 comment += '</form>'
             }
 
