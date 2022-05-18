@@ -37,8 +37,8 @@
                     <p>Jelszó: <input type="password" name="login_password"></p>
 
                     <p><input type="submit" class="btn btn-success" value="Bejelentkezés"></p>
-                    <p>login felhasználónév:admin@admin.com</p>
-                    <p>login jelszó:admin</p>
+                    <p>login email: admin@admin.com</p>
+                    <p>login jelszó: admin</p>
                 </form>
             </div>
 
@@ -81,8 +81,8 @@
                         <p>Jelszó újra: <input type="password" name="reg_password2"></p>
 
                         <p><input type="submit" class="btn btn-primary" value="Regisztráció"></p>
-                        <p>login felhasználónév:admin@admin.com</p>
-                        <p>login jelszó:admin</p>
+                        <p>login email: admin@admin.com</p>
+                        <p>login jelszó: admin</p>
                     </form>
 
                 </div>
