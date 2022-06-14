@@ -1,7 +1,9 @@
 <?php
 session_start();
 error_reporting(0);
-include "./backend/check_login.php"; ?>
+include_once "includers/loginCheck.php";
+?>
+
 <!doctype html>
 <html lang="hu">
 <head>
@@ -26,29 +28,15 @@ include "./backend/check_login.php"; ?>
     <title>Kezdőlap</title>
 </head>
 <body>
+<?php 
+if ($_SESSION["admin"]==1){
+    include_once "includers/adminNavbar.inc.php";
+}
+else{
+    include_once "includers/userNavbar.inc.php";
+}
 
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Kezdőlap</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="favorites.php">Kedvencek</a>
-                </li>
-
-            </ul>
-            <form class="d-flex">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bejelentkezve: <?php echo $_SESSION["email"]; ?></a>
-
-                <p><a class="btn btn-outline-danger" href='backend/logout.php'>Kijelentkezés</a></p>
-            </form>
-        </div>
-    </div>
-</nav>
-
+?>
 
 <div style="margin-right: unset;margin-left: unset" class="row" id="tablazat">
 
@@ -70,15 +58,34 @@ include "./backend/check_login.php"; ?>
 
             </div>
 
-            <div id="comments"">
+            <div id="comments">
 
             </div>
+
+            <?php 
+            include_once "controllers/CommentController.php";
+                if(isset($_POST["deleteCommentForm"])){
+                    $id=$_POST['review_id'];
+                    DeleteComment($id);
+                }
+            
+                if(isset($_POST["commentUp"])){
+                    $filmId=$_POST['commentFilmId'];
+                    $value=$_POST['reviewValue'];
+                    $content=$_POST['commentContent'];
+                    $userId=$_SESSION['id'];
+
+                    UpComment($filmId, $value, $content, $userId);
+                }
+
+            ?>
+
 
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bezárás</button>
             </div>
-
+            
         </div>
     </div>
 </div>
@@ -88,9 +95,8 @@ include "./backend/check_login.php"; ?>
 
 
 
-<footer id="footer">
-    Készítette: Hannyis Zoltán
-    <p>© 2022 Copyright: film.freecluster.eu</p>
-</footer>
+<?php
+    include_once "includers/footer.inc.php";
+?>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include "./backend/check_login.php";
+include_once "includers/loginCheck.php";
 if($_SESSION["admin"]==1){ ?>
     <!doctype html>
     <html lang="hu">
@@ -20,49 +20,18 @@ if($_SESSION["admin"]==1){ ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-        <script src="../javascript/user_management_angular.js"></script>
+        <script src="javascript/user_management_angular.js"></script>
 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-        <script src="javascript/main_page_films.js"></script>
 
         <title>Kezdőlap</title>
     </head>
     <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="admin_main_page.php">Kezdőlap</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="favorites.php">Kedvencek</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Admin Eszközök
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Felhasználók kezelése</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="film_management.php">Film felvitele</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="film_edit.php">Filmek szerkesztése</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bejelentkezve: <?php echo $_SESSION["email"]; ?></a>
-
-                    <p><a class="btn btn-outline-danger" href='backend/logout.php'>Kijelentkezés</a></p>
-                </form>
-            </div>
-        </div>
-    </nav>
+    <?php  
+        include_once "includers/adminNavbar.inc.php";
+    ?>
 
 
 
@@ -94,7 +63,7 @@ if($_SESSION["admin"]==1){ ?>
                 <td style="text-align: center">{{ x.users_admin }}</td>
                 <td><input type='button' class="btn btn-outline-danger" ng-click='remove($index,x.users_id);' value='Törlés'></td>
 
-                <td>
+                <td id="rankButtons">
                     <input onclick="window.location.reload()" ng-if="x.users_admin==0" type='button' class="btn btn-outline-success" ng-click='rangup($index,x.users_id,x.users_admin);' value='Rang növel'>
                     <input onclick="window.location.reload()" ng-if="x.users_admin==1" type='button' class="btn btn-outline-danger" ng-click='rangdown($index,x.users_id,x.users_admin);' value='Rang csökkent'>
                 </td>
@@ -103,11 +72,11 @@ if($_SESSION["admin"]==1){ ?>
 
     </div>
 
+    <div id="responstest"></div>
 
-    <footer id="footer">
-        Készítette: Hannyis Zoltán
-        <p>© 2022 Copyright: filmek.com</p>
-    </footer>
+    <?php
+        include_once "includers/footer.inc.php";
+    ?>
 
     </body>
     </html>

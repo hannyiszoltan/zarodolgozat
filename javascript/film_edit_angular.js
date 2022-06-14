@@ -1,70 +1,53 @@
 var app = angular.module('myApp', []);
 
 app.controller('customersCtrl', function($scope, $http) {
-    $http.get("../backend/get_film_data.php")
+    $http.get("routes.php?action=AllFilm")
         .then(function (response) {$scope.film = response.data;});
 
-
-
-//rendezés
+    //Rendezés
     $scope.sortBy = function(propertyName) {
         $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
         $scope.propertyName = propertyName;
     };
 
-
-
-// Remove record
-    $scope.remove = function(index,filmid,filmimage){
+    //Film Törlése
+    $scope.remove = function(index, filmid, imagename){
         $http({
-            method: 'post',
-            url: '../backend/delete_film.php',
+            method: 'POST',
+            url: 'routes.php?action=DeleteFilm',
+            data: {filmId:filmid, imageName:imagename},
             headers: {
-                'Content-Type': 'application/json'
-            },
-            data: {input1:filmid,input2:filmimage},
+                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
         }).then(function successCallback(response) {
-            if(response.data == 1)
+            if(response.data == 1){
                 $scope.film.splice(index, 1);
-            else
-                $scope.film.splice(index, 1);
+                alert('Sikeres eltávolítás!');
+            }
+            else{
+            $scope.film.splice(index, 1);
+            alert('Sikeres eltávolítás!');
+            }
         });
     }
 
-
-    $scope.edited = function(index, filmid, filmTitle, filmLength, filmDescription){
+    //Film Adatainak Szerkesztése
+    $scope.edited = function(index, filmtitle, filmlength, filmdescription, filmid  ){
         $http({
-            method: 'post',
-            url: '../backend/edit_film.php',
+            method: 'POST',
+            url: 'routes.php?action=ChangeFilmData',
+            data: {filmTitle:filmtitle, filmLength:filmlength, filmDescription:filmdescription, filmId:filmid, request_type:3},
             headers: {
-                'Content-Type': 'application/json'
-            },
-            data: {index, input1: filmid, input2: filmTitle, input3: filmLength, input4: filmDescription},
+                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
         }).then(function successCallback(response) {
             if(response.data == 1)
-                alert('Sikeres!');
+                alert('Sikeres módosítás!');
             else
-                alert('Sikertelen!');
+                alert('Sikertelen módosítás!');
         });
     }
+
 });
-/*
-    $scope.rangdown = function(index,userid){
-
-        $http({
-            method: 'post',
-            url: '../backend/change_admin_down.php',
-            data: {bevitel1:userid,request_type:3},
-        }).then(function successCallback(response) {
-            if(response.data == 1)
-                $scope.film.splice(index, 1);
-            else
-                alert('Record not deleted.');
-        });
-    }
-
-
-
-*/
 
 

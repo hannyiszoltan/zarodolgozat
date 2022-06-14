@@ -1,12 +1,5 @@
-footer{
-    text-align: center;
-
-    height: 100px;
-    background-color:dimgrey;
-}
 .form-control{
     width: 200px !important;
-
 }
 .navbar {
     padding-bottom: 0px !important;
@@ -18,7 +11,7 @@ footer{
 }
 #tablazat{
     justify-content: space-evenly;
-    background-color: #22c1c3; !important;
+    background-color: #22c1c3 !important;
 }
 .card{
     margin: 10px 10px 10px 10px !important;
@@ -39,7 +32,6 @@ footer{
 #modal-bodyContent{
     display: flex;
 }
-
 #modal-contents-description{
     margin-left: 10px !important;
 }
@@ -51,7 +43,17 @@ footer{
     flex: 1 1 auto;
     padding: 10px 10px 10px 10px;
 }
-
+.footer{
+    font-family: 'Verdana';
+    background-color:dimgrey;
+    margin-top: 10px !important;
+    padding-top: 3ch !important;
+    border-top: 1px solid black;
+    font-weight: 550;
+    font-size: 12px !important;
+    text-align: center;
+    height: 10ch;
+}
 .ertekeles_nyil_fel{
     color: green;
     padding: 5px;

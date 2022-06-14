@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -31,15 +33,9 @@
 
 
             <div class="modal-body">
-                <form method="post" action="/backend/login.php">
-
-                    <p>E-mail: <input type="email" name="login_email"></p>
-                    <p>Jelszó: <input type="password" name="login_password"></p>
-
-                    <p><input type="submit" class="btn btn-success" value="Bejelentkezés"></p>
-                    <p>login email: admin@admin.com</p>
-                    <p>login jelszó: admin</p>
-                </form>
+                <?php 
+                    include_once "includers/login.inc.php";
+                ?>
             </div>
 
 
@@ -72,18 +68,9 @@
                 <!-- Modal body -->
                 <div class="modal-body">
 
-                    <form method="post" action="../backend/register.php">
-
-                        <p>Felhasználónév: <input type="text" name="reg_username"></p>
-                        <p>E-mail: <input type="email" name="reg_email"></p>
-                        <p>Jelszó: <input type="password" name="reg_password1"></p>
-
-                        <p>Jelszó újra: <input type="password" name="reg_password2"></p>
-
-                        <p><input type="submit" class="btn btn-primary" value="Regisztráció"></p>
-                        <p>login email: admin@admin.com</p>
-                        <p>login jelszó: admin</p>
-                    </form>
+                    <?php 
+                        include_once "includers/register.inc.php"
+                    ?>
 
                 </div>
 
@@ -100,11 +87,9 @@
 
 
 </body>
-<footer id="footer" class="wrapper flex-grow-1">
-    Készítette: Hannyis Zoltán
-    <p>© 2022 Copyright: film.freecluster.eu</p>
-</footer>
-
+<?php
+    include_once "includers/footer.inc.php";
+?>
 </html>
 
 <?php
